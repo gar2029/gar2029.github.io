@@ -1,0 +1,1758 @@
+<html>
+<head>
+<title>TOBACCO CIGARETTES NICOTINE SMOKING SMOKELESS CHEWING SPITLESS "MOIST SNUFF" SNUS CHILDREN YOUTH</title>
+</head>  
+<script language="javascript" type="text/javascript">
+<!--
+/*
+Image w/ description tooltip- By Dynamic Web Coding (www.dyn-web.com)
+Copyright 2002 by Sharon Paine
+Visit http://www.dynamicdrive.com for this script
+*/
+var dom = (document.getElementById) ? true : false;
+var ns5 = ((navigator.userAgent.indexOf("Gecko")>-1) && dom) ? true: false;
+var ie5 = ((navigator.userAgent.indexOf("MSIE")>-1) && dom) ? true : false;
+var ns4 = (document.layers && !dom) ? true : false;
+var ie4 = (document.all && !dom) ? true : false;
+var nodyn = (!ns5 && !ns4 && !ie4 && !ie5) ? true : false;
+// resize fix for ns4
+var origWidth, origHeight;
+if (ns4) {
+	origWidth = window.innerWidth; origHeight = window.innerHeight;
+	window.onresize = function() { if (window.innerWidth != origWidth || window.innerHeight != origHeight) history.go(0); }
+}
+// avoid error of passing event object in older browsers
+if (nodyn) { event = "nope" }
+///////////////////////  CUSTOMIZE HERE   ////////////////////
+// settings for tooltip 
+// Do you want tip to move when mouse moves over link?
+var tipFollowMouse= true;	
+// Be sure to set tipWidth wide enough for widest image
+var tipWidth= 160;
+var offX= 20;	// how far from mouse to show tip
+var offY= 12; 
+var tipFontFamily= "Verdana, arial, helvetica, sans-serif";
+var tipFontSize= "8pt";
+// set default text color and background color for tooltip here
+// individual tooltips can have their own (set in messages arrays)
+// but don't have to
+var tipFontColor= "#000000";
+var tipBgColor= "#DDECFF"; 
+var tipBorderColor= "#000080";
+var tipBorderWidth= 3;
+var tipBorderStyle= "ridge";
+var tipPadding= 4;
+// tooltip content goes here (image, description, optional bgColor, optional textcolor)
+var messages = new Array();
+// multi-dimensional arrays containing: 
+// image and text for tooltip
+// optional: bgColor and color to be sent to tooltip
+messages[0] = new Array('ggiovino.jpg', 'Dr. Gary Giovino',"#FFFFFF");
+messages[1] = new Array('nbenowitz.gif','Dr. Neal Benowitz',"#DDECFF");
+messages[2] = new Array('snus_users_mouth2.jpg','snus_users_mouth.jpg',"#FFFFFF");
+messages[3] = new Array('bad_breath.jpg','Bad Breath',"#FFFFFF"); 
+messages[4] = new Array('teeth_abrasion.jpg','Abrasion of Teeth',"#FFFFFF"); 
+messages[5] = new Array('bone_loss.jpg','Bone Loss around the Teeth',"#DDECFF");
+messages[6] = new Array('gum_recession.jpg','Gum Recession',"#FFFFFF");
+messages[7] = new Array('leukoplakia_2.jpg','Leukoplakia',"#FFFFFF"); 
+messages[8] = new Array('oral_cancer_4.jpg','Cancer of the Mouth',"#FFFFFF"); 
+messages[9] = new Array('Carmona_17th_US_Surgeon_General.jpg','Richard H. Carmona',"#FFFFFF"); 
+messages[10] = new Array('Increased_Cost_Cigarettes.jpg','increased cost of cigarettes',"#FFFFFF");
+messages[11] = new Array('2nd_handsmoke_sources.jpg','secondhand-smoke',"#FFFFFF");
+messages[12] = new Array('snus_portion_placement_in_mouth.jpg','between the upper lip and gums',"#FFFFFF");
+messages[13] = new Array('snus_packets.jpg','tea-bag like pouches',"#FFFFFF");
+messages[14] = new Array('Pancreatic_Cancer_Incidence_Death.jpg','Pancreatic cancer',"#FFFFFF");
+messages[15] = new Array('Smokeless_Tobacco_Market.gif','The U.S Smokeless Tobacco Market.',"#FFFFFF"); 
+messages[16] = new Array('Smokeless_tobacco_cancerous_growths.jpg','cancer of the oral cavity',"#FFFFFF");
+messages[17] = new Array('NO_snus_cigarettes2.jpg','NO',"#FFFFFF");
+messages[18] = new Array('FCTC_image.gif','Framework Convention on Tobacco Control',"#FFFFFF");
+messages[19] = new Array('Marlboro_menthol_5_28_2007_2.jpg','buy one and get one free',"#FFFFFF");
+messages[20] = new Array('Cigarette_Consumption_1990_2005.JPG','declining',"#FFFFFF");
+messages[21] = new Array('Rodu_Brad_DDS_Louisville_pro_smokeless.jpg','Dr. Brad Rodu',"#FFFFFF"); 
+messages[22] = new Array('Camel_Snus_Kylie_Meiner_Portland_Tribune_11_21_2006.jpg','Kylie Meiner',"#FFFFFF");
+messages[23] = new Array('Mitchell_Zeller.jpg','Mitch Zeller',"#FFFFFF");
+messages[24] = new Array('Foulds_Jonathan.jpg','Dr. Jonathan Foulds',"#FFFFFF");
+messages[25] = new Array('snus_user_ex_adverse_mouth.jpg','This Could Be You..',"#FFFFFF"); 
+messages[26] = new Array('Camel_snus_flavors.jpg','Camel SNUS (three varieties: original, frost and spices)',"#FFFFFF");
+messages[27] = new Array('Bonnie-Herzog-2005.jpg','Bonnie Herzog',"#FFFFFF");
+////////////////////  END OF CUSTOMIZATION AREA  ///////////////////
+// preload images that are to appear in tooltip
+// from arrays above
+if (document.images) {
+	var theImgs = new Array();
+	for (var i=0; i<messages.length; i++) {
+  	theImgs[i] = new Image();
+		theImgs[i].src = messages[i][0];
+  }
+}
+// to layout image and text, 2-row table, image centered in top cell
+// these go in var tip in doTooltip function
+// startStr goes before image, midStr goes between image and text
+var startStr = '<table width="' + tipWidth + '"><tr><td align="center" width="100%"><img src="';
+var midStr = '" border="0"></td></tr><tr><td valign="top">';
+var endStr = '</td></tr></table>';
+////////////////////////////////////////////////////////////
+//  initTip	- initialization for tooltip.
+//		Global variables for tooltip. 
+//		Set styles for all but ns4. 
+//		Set up mousemove capture if tipFollowMouse set true.
+////////////////////////////////////////////////////////////
+var tooltip, tipcss;
+function initTip() {
+	if (nodyn) return;
+	tooltip = (ns4)? document.tipDiv.document: (ie4)? document.all['tipDiv']: (ie5||ns5)? document.getElementById('tipDiv'): null;
+	tipcss = (ns4)? document.tipDiv: tooltip.style;
+	if (ie4||ie5||ns5) {	// ns4 would lose all this on rewrites
+		tipcss.width = tipWidth+"px";
+		tipcss.fontFamily = tipFontFamily;
+		tipcss.fontSize = tipFontSize;
+		tipcss.color = tipFontColor;
+		tipcss.backgroundColor = tipBgColor;
+		tipcss.borderColor = tipBorderColor;
+		tipcss.borderWidth = tipBorderWidth+"px";
+		tipcss.padding = tipPadding+"px";
+		tipcss.borderStyle = tipBorderStyle;
+	}
+	if (tooltip&&tipFollowMouse) {
+		if (ns4) document.captureEvents(Event.MOUSEMOVE);
+		document.onmousemove = trackMouse;
+	}
+}
+window.onload = initTip;
+/////////////////////////////////////////////////
+//  doTooltip function
+//			Assembles content for tooltip and writes 
+//			it to tipDiv
+/////////////////////////////////////////////////
+var t1,t2;	// for setTimeouts
+var tipOn = false;	// check if over tooltip link
+function doTooltip(evt,num) {
+	if (!tooltip) return;
+	if (t1) clearTimeout(t1);	if (t2) clearTimeout(t2);
+	tipOn = true;
+	// set colors if included in messages array
+	if (messages[num][2])	var curBgColor = messages[num][2];
+	else curBgColor = tipBgColor;
+	if (messages[num][3])	var curFontColor = messages[num][3];
+	else curFontColor = tipFontColor;
+	if (ns4) {
+		var tip = '<table bgcolor="' + tipBorderColor + '" width="' + tipWidth + '" cellspacing="0" cellpadding="' + tipBorderWidth + '" border="0"><tr><td><table bgcolor="' + curBgColor + '" width="100%" cellspacing="0" cellpadding="' + tipPadding + '" border="0"><tr><td>'+ startStr + messages[num][0] + midStr + '<span style="font-family:' + tipFontFamily + '; font-size:' + tipFontSize + '; color:' + curFontColor + ';">' + messages[num][1] + '</span>' + endStr + '</td></tr></table></td></tr></table>';
+		tooltip.write(tip);
+		tooltip.close();
+	} else if (ie4||ie5||ns5) {
+		var tip = startStr + messages[num][0] + midStr + '<span style="font-family:' + tipFontFamily + '; font-size:' + tipFontSize + '; color:' + curFontColor + ';">' + messages[num][1] + '</span>' + endStr;
+		tipcss.backgroundColor = curBgColor;
+	 	tooltip.innerHTML = tip;
+	}
+	if (!tipFollowMouse) positionTip(evt);
+	else t1=setTimeout("tipcss.visibility='visible'",100);
+}
+var mouseX, mouseY;
+function trackMouse(evt) {
+	mouseX = (ns4||ns5)? evt.pageX: window.event.clientX + document.body.scrollLeft;
+	mouseY = (ns4||ns5)? evt.pageY: window.event.clientY + document.body.scrollTop;
+	if (tipOn) positionTip(evt);
+}
+/////////////////////////////////////////////////////////////
+//  positionTip function
+//		If tipFollowMouse set false, so trackMouse function
+//		not being used, get position of mouseover event.
+//		Calculations use mouseover event position, 
+//		offset amounts and tooltip width to position
+//		tooltip within window.
+/////////////////////////////////////////////////////////////
+function positionTip(evt) {
+	if (!tipFollowMouse) {
+		mouseX = (ns4||ns5)? evt.pageX: window.event.clientX + document.body.scrollLeft;
+		mouseY = (ns4||ns5)? evt.pageY: window.event.clientY + document.body.scrollTop;
+	}
+	// tooltip width and height
+	var tpWd = (ns4)? tooltip.width: (ie4||ie5)? tooltip.clientWidth: tooltip.offsetWidth;
+	var tpHt = (ns4)? tooltip.height: (ie4||ie5)? tooltip.clientHeight: tooltip.offsetHeight;
+	// document area in view (subtract scrollbar width for ns)
+	var winWd = (ns4||ns5)? window.innerWidth-20+window.pageXOffset: document.body.clientWidth+document.body.scrollLeft;
+	var winHt = (ns4||ns5)? window.innerHeight-20+window.pageYOffset: document.body.clientHeight+document.body.scrollTop;
+	// check mouse position against tip and window dimensions
+	// and position the tooltip 
+	if ((mouseX+offX+tpWd)>winWd) 
+		tipcss.left = (ns4)? mouseX-(tpWd+offX): mouseX-(tpWd+offX)+"px";
+	else tipcss.left = (ns4)? mouseX+offX: mouseX+offX+"px";
+	if ((mouseY+offY+tpHt)>winHt) 
+		tipcss.top = (ns4)? winHt-(tpHt+offY): winHt-(tpHt+offY)+"px";
+	else tipcss.top = (ns4)? mouseY+offY: mouseY+offY+"px";
+	if (!tipFollowMouse) t1=setTimeout("tipcss.visibility='visible'",100);
+}
+function hideTip() {
+	if (!tooltip) return;
+	t2=setTimeout("tipcss.visibility='hidden'",100);
+	tipOn = false;
+}
+//-->
+</script>
+<meta name="ProgId" content="Word.Document">
+<meta name="Generator" content="Microsoft Word 11">
+<meta name="Originator" content="Microsoft Word 11"><title>NO to Smokeless, Spitless Pouch Tobacco - SNUS</title></head>
+<body background="mentholcrystal_1.jpg" text="990033">
+<center>
+<b><i>Copyright Notice: The content of this web module may not be copied <br>
+or used in any manner without permission of the authors.</i> </b></center>
+<b><img src="gear.gif" align="right">  <p align="right">Under Construction (12/2006)</p>  <br> <br>
+<center>
+<b><a href="http://snus-news.blogspot.com/">For news on SNUS and Other Tobacco Products</a><br><br> 
+<b>For more information on tobacco especially mentholated cigarettes Visit Our Home
+ Page
+<a href="/">Tobaccowatch.org</a><br> <br>
+<img src="Preventive_Medicine_words.gif" length="250" width="200"><br>
+</b><h2 align="center"><b>
+<a href="#" onmouseover="doTooltip(event,17)" onmouseout="hideTip()">NO</a>
+to Smokeless, Spitless Pouch Tobacco -It's the Kids"</b></h2>
+<h3 align="center"><b>&#8220;If You 
+<a href="snus_general_info.html">Snoose</a>
+ You Lose"</b></h3>
+<b><font color="#808000" face="atrial" size="5">- Moist Snuff -</font>
+<h3>
+Samuel Garten, Ph.D., M.S., M.S., CPT, ACPT, NREMT-B and
+R. Victor Falkner, M.A., M.S., M.A.L.S. </h3> 
+</b><hr align="center" noshade="noshade" size="2" width="300">
+<div align="left"><marquee scrollamount="1" scrolldelay="10" direction="up" width="200" height="50" style="font-family: Verdana; font-size: 8pt">
+03/31/2008 - Turkey’s Competition Board has approved the sale of Tekel’s cigarette business assets to British
+ American Tobacco, according to a report in Today’s Zaman quoting the board’s website. The transaction is still subject to ratification by Turkey’s 
+Privatization High Council. Market share will be 36% from 7%, about 110 billion cigarettes are sold in Turkey each year. 
+<br><br>
+02/28/2008 -  British American Tobacco Plc, London-based BAT, the world's second-largest publicly traded cigarette maker, struck its second deal
+in a week  (see below 2/22/2008) with the purchase of 
+ Skandinavisk Tobakskompagni A/S (ST) for $4.1 billion (2 billion pounds).
+<br><br> 
+02/22/2008 - British American Tobacco Plc (BAT) will buy cigarette maker Tekel from the Turkish government
+ for $1.72 billion to eat into Philip Morris International's market lead of 41% in this nation (Turkey - 8th largest tobacco market, 60% of men smoke).
+<br><br> 
+01/23/2008 - The Imperial Tobacco Group has won control of Altadis following overwhelming support by shareholders for its €50 per share offer. 
+(1 Euro = 1.4498 USD) <br><br>
+01/08/2008 - Imperial extends Altadis offer period from January 11 to January 18 the acceptance period of its €50-per-share offer for Altadis,
+ which remains conditional upon 
+80 per cent of Altadis shares being tendered. Imperial said earlier today that it had decided to extend the acceptance period to give more time 
+for Altadis' shareholders to accept its offer.<br><br>
+11/01/2007 - Cigarette maker Altria Group agreed to buy John Middleton, the maker of Black & Mild cigars, for $2.9 billion in cash.
+<br><br>
+10/18/2007—The European Commission has approved Imperial Tobacco Group’s proposed acquisition of Altadis. <br><br>
+9/28/2007 - Japan Tobacco International (JTI) plans to close its factory at Linz, Austria, by the end of 2009 - another casualty of the
+Gallaher sale. The Linz factory was established
+ in 1935, and today manufactures about 20 billion cigarettes annually, including Memphis and
+ Benson & Hedges. JTI said the plans would ‘affect’ about 300 jobs in Linz and Vienna.
+<br><br>
+9/28/2007 - Gallaher Cardiff cigar factory to close within two years. Gallaher was acquired by Japan Tobacco Internation in April 2007 -
+see below. The Cardiff factory, which was established in 1961, manufactures about 330 million cigars annually. The decision will 
+affect 184 jobs.
+<br><br> 
+9/10/2007 - The European Commission has said that it will rule on Imperial Tobacco Group's €12 billion bid for Altadis 
+by October 4, according to a Dow Jones International News report.<br><br> 
+8/16/2007 - Swedish Match AB (STO:SWMA) has agreed to acquire Cigars International, Inc., a privately held U.S. company 
+(Hdq: Bath, PA)that
+ specializes in the direct marketing and sales of hand-made and machine-made premium cigars and related accessories. Cigars 
+International employs approximately 100 people and had sales of approximately 400 MSEK  (Million Swedish Kroner,
+6.9 kroner = 1 US dollar) for the twelve month period ending
+June 30, 2007.The company features an attractive product mix including Macanudo, Romeo y Julieta, and Arturo Fuente, among
+ many others, and complements them with a strong mix of proprietary
+ branded cigars and cigars sold exclusively by Cigars International.(Business Wire)
+<br><br>
+8/13/2007 — Imperial Tobacco’s shareholders voted today at an Extraordinary General Meeting (EGM) in favor 
+of the company’s proposed acquisition of Altadis. In announcing the result of the EGM poll, the company said that the making of its proposed 
+offer remained conditional on the approval of the Spanish regulator, the CNMV. (Tobacco Reporter) 
+<br><br> 
+7/18/2007 - Britain's Imperial Tobacco agreed to buy Franco-Spanish rival Altadis in a 16.2 billion euros ($22.4 billion) deal that
+includes debt. The move will join together the world's fourth largest cigarette group, Imperial, and the fifth, Altadis (Alliance 
+Tobacco Distribution), and 
+close the gap with the world's top three groups; Altria Inc., British American Tobacco and Japan Tobacco. (javno.com) Altadis is 
+the world's largest cigar company; 
+hand-made brands include: Playboy by Don Diego and Romeo y Julieta and machine-made brands include: Dutch Master, Muriel and 
+Phillies. 
+<br><br> 
+4/18/2007 - Japan Tobacco (JT) Group completes Gallaher acquisition.
+Gallaher today became part of the JT,
+which remains the third largest international tobacco manufacturer but whose share of the world market
+ moves from 7.4 per cent to 10.5 per cent. The JT group now claims to be the number one or number two
+ cigarette supplier to 10 markets, including Japan, the UK and Russia. In finalizing its £7.5 billion 
+take-over of Gallaher, JT has added to its international portfolio of Camel, Winston, Mild Seven and 
+Salem, brands such as B&H;, Silk Cut, Sobranie and LD. The acquisition has given it greater expertise
+in Virginia blend technology, and it has added RYO (roll your own) brands, cigars, pipe 
+tobacco and, <b>importantly, snus</b>. (Tobacco Reporter) 
+<br><br>
+4/2/2007 - Imperial Tobacco Group indicated that it had completed the acquisition of
+Commonwealth Brands, based in Blowing Green, KY, the 4th biggest U.S. cigarette maker (e.g., USA GOLD - 8th best selling cigarette
+in the US and Sonoma - 14th
+discount cigarettes; other brands: Montclair, Malibu and Riviera) with 3.7 per cent of the $376 billion
+ US cigarette market. (Tobacco Reporter)
+<br><br> 
+3/17/2007 - Altadis rejects takeover bid from Imperial Tobacco. A merger of Imperial and Altadis would unite the 
+fourth-and fifth-largest tobacco groups in the world, but the combination would still rank behind Altria,
+British American Tobacco and Japan Tobacco (International Herald Tribune). Into SNUS - Imperial Tobacco 
+acquired on 14 September 2005 a 43% interest in Skruf Snus AB. The agreement includes a commitment to acquire the remaining shares
+by mid 2009 and provides Imperial with control of the operating and financial policies of Skruf Snus AB.
+<br><br>
+3/15/2007 - Imperial Tobacco Group has approached Altadis SA for a possible takeover, according to reports in the international
+ financial press. (Tobacco Reporter)<br><br> 
+3/07/2007 - Tobacco manufacturer Swedish Match has failed in its bid to get MPs 
+(Members of Parliament)from South Africa (SA)to grant its moist snuff product  
+<a href="http://allafrica.com/stories/200703070205.html">"snus" blanket exemption</a> from
+the legal definition of a tobacco product. Swedish Match argued that snus could help 
+smokers quit and was not a gateway product leading to cigarettes and cigars 
+(Tamar Kahn, allAfrica.com).<br>3/14/2007
+MPs have opened the door slightly for tobacco companies hoping to launch new and
+supposedly less harmful products in SA, adding a new clause to the draft Tobacco Products Control 
+Amendment Bill that gives the health minister powers to exempt specific products from the strict new laws.
+(Tamar Kahn, allAfrica.com)
+<br><br>
+2/21/2007 - EU antitrust regulators approved Japan Tobacco, Inc. planned purchase of Gallaher Group 
+(Tobacco Reporter).
+<br><br>
+2/14/2007 - Tobacco-chewing U.S. federal legislator Charles Norwood, Jr. dead at 65. <br><br>
+12/15/2006 - Japan Tobacco, Inc., the world's 3rd largest cigarette maker 
+agrees to buy Gallaher Group - number 5. Gallaher Snus holds 2.4%
+of the Swedish Snus market (2nd only to Swedish Match)with brands 
+like Gustavus, Grand and low priced LD.
+</marquee></div>
+<p>In this module:</b><br>
+<a href="#Move">Move to Smokeless Tobacco</a>
+<br>
+<a href="#HIGHEST">HIGHEST PRIORITY - Keeping Kids from Using Tobacco Products</a>
+<br>
+<a href="#Tobacco">Tobacco Companies Claim Targeting Only Current Smokers</a> 
+<br>
+<a href="#Programs">Programs to Eliminate Tobacco are Working</a>
+<br> 
+<a href="#Playing">Playing Right Into the Hands of Big Tobacco</a>
+<br>
+<a href="#Harm">Harm Reduction - The Pharmacology of Moist Snuff - SNUS</a>
+<br>
+<a href="#Cardiovascular">Cardiovascular Disease</a>
+<br>
+<a href="#Oral">Oral Lesions</a>
+<br>
+<a href="#Pancreatic">Pancreatic Cancer</a>
+<br>
+<a href="#Other">Other Adverse Conditions</a>
+<br> 
+<a href="#Promotion">Promotion of Moist Snuff - <font size="5">
+<a href="#" onmouseover="doTooltip(event,17)" onmouseout="hideTip()">NO</a>
+</font> - More Research/Regulations Needed</a>
+</b></p></center>
+<b><br>
+<br>
+<script>
+<!-- Hide from old browsers
+/******************************************
+* Find In Page Script -- Submitted/revised by Alan Koontz (alankoontz@REMOVETHISyahoo.com)
+* Visit Dynamic Drive (http://www.dynamicdrive.com/) for full source code
+* This notice must stay intact for use
+******************************************/
+//  revised by Alan Koontz -- May 2003
+var TRange = null;
+var dupeRange = null;
+var TestRange = null;
+var win = null;
+//  SELECTED BROWSER SNIFFER COMPONENTS DOCUMENTED AT
+//  http://www.mozilla.org/docs/web-developer/sniffer/browser_type.html
+var nom = navigator.appName.toLowerCase();
+var agt = navigator.userAgent.toLowerCase();
+var is_major   = parseInt(navigator.appVersion);
+var is_minor   = parseFloat(navigator.appVersion);
+var is_ie      = (agt.indexOf("msie") != -1);
+var is_ie4up   = (is_ie && (is_major >= 4));
+var is_not_moz = (agt.indexOf('netscape')!=-1)
+var is_nav     = (nom.indexOf('netscape')!=-1);
+var is_nav4    = (is_nav && (is_major == 4));
+var is_mac     = (agt.indexOf("mac")!=-1);
+var is_gecko   = (agt.indexOf('gecko') != -1);
+var is_opera   = (agt.indexOf("opera") != -1);
+//  GECKO REVISION
+var is_rev=0
+if (is_gecko) {
+temp = agt.split("rv:")
+is_rev = parseFloat(temp[1])
+}
+//  USE THE FOLLOWING VARIABLE TO CONFIGURE FRAMES TO SEARCH
+//  (SELF OR CHILD FRAME)
+//  If you want to search another frame, change from "self" to
+//  the name of the target frame:
+//  e.g., var frametosearch = 'main'
+//var frametosearch = 'main';
+var frametosearch = self;
+function search(whichform, whichframe) {
+//  TEST FOR IE5 FOR MAC (NO DOCUMENTATION)
+if (is_ie4up && is_mac) return;
+//  TEST FOR NAV 6 (NO DOCUMENTATION)
+if (is_gecko && (is_rev <1)) return;
+//  TEST FOR Opera (NO DOCUMENTATION)
+if (is_opera) return;
+//  INITIALIZATIONS FOR FIND-IN-PAGE SEARCHES
+if(whichform.findthis.value!=null && whichform.findthis.value!='') {
+       str = whichform.findthis.value;
+       win = whichframe;
+       var frameval=false;
+       if(win!=self)
+{
+       frameval=true;  // this will enable Nav7 to search child frame
+       win = parent.frames[whichframe];
+}
+}
+else return;  //  i.e., no search string was entered
+var strFound;
+//  NAVIGATOR 4 SPECIFIC CODE
+if(is_nav4 && (is_minor < 5)) {
+  strFound=win.find(str); // case insensitive, forward search by default
+//  There are 3 arguments available:
+//  searchString: type string and it's the item to be searched
+//  caseSensitive: boolean -- is search case sensitive?
+//  backwards: boolean --should we also search backwards?
+//  strFound=win.find(str, false, false) is the explicit
+//  version of the above
+//  The Mac version of Nav4 has wrapAround, but
+//  cannot be specified in JS
+        }
+//  NAVIGATOR 7 and Mozilla rev 1+ SPECIFIC CODE (WILL NOT WORK WITH NAVIGATOR 6)
+if (is_gecko && (is_rev >= 1)) {
+    if(frameval!=false) win.focus(); // force search in specified child frame
+    strFound=win.find(str, false, false, true, false, frameval, false);
+//  The following statement enables reversion of focus 
+//  back to the search box after each search event 
+//  allowing the user to press the ENTER key instead
+//  of clicking the search button to continue search.
+//  Note: tends to be buggy in Mozilla as of 1.3.1
+//  (see www.mozilla.org) so is excluded from users 
+//  of that browser.
+    if (is_not_moz)  whichform.findthis.focus();
+//  There are 7 arguments available:
+//  searchString: type string and it's the item to be searched
+//  caseSensitive: boolean -- is search case sensitive?
+//  backwards: boolean --should we also search backwards?
+//  wrapAround: boolean -- should we wrap the search?
+//  wholeWord: boolean: should we search only for whole words
+//  searchInFrames: boolean -- should we search in frames?
+//  showDialog: boolean -- should we show the Find Dialog?
+}
+ if (is_ie4up) {
+  // EXPLORER-SPECIFIC CODE revised 5/21/03
+  if (TRange!=null) {
+   TestRange=win.document.body.createTextRange();
+   if (dupeRange.inRange(TestRange)) {
+   TRange.collapse(false);
+   strFound=TRange.findText(str);
+    if (strFound) {
+        //the following line added by Mike and Susan Keenan, 7 June 2003
+        win.document.body.scrollTop = win.document.body.scrollTop + TRange.offsetTop;
+        TRange.select();
+        }
+   }
+   else {
+     TRange=win.document.body.createTextRange();
+     TRange.collapse(false);
+     strFound=TRange.findText(str);
+     if (strFound) {
+        //the following line added by Mike and Susan Keenan, 7 June 2003
+        win.document.body.scrollTop = TRange.offsetTop;
+        TRange.select();
+        }
+   }
+  }
+   if (TRange==null || strFound==0) {
+   TRange=win.document.body.createTextRange();
+   dupeRange = TRange.duplicate();
+   strFound=TRange.findText(str);
+    if (strFound) {
+        //the following line added by Mike and Susan Keenan, 7 June 2003
+        win.document.body.scrollTop = TRange.offsetTop;
+        TRange.select();
+        }
+   }
+ }
+  if (!strFound) alert ("String '"+str+"' not found!") // string not found
+}
+// -->
+</script>
+<!--  EXAMPLE FORM OF FIND-IN-PAGE SEARCH USING SUBMIT (ALLOWING 'ENTER/RETURN' KEY PRESS EVENT) -->
+</b><form name="form1" onsubmit="search(document.form1, frametosearch); return false"><b><input name="findthis" size="15" title="Press 'ALT s' after clicking submit to repeatedly search page" type="text"> <input value="Find in Page" accesskey="s" type="submit">
+</b><h4><b>------- Moist Snuff Users  -------</b></h4><b> 
+<a href="#" onmouseover="doTooltip(event,2)" onmouseout="hideTip()">'<img src="snus_users_mouth.jpg" length="400" align="left" width="200">
+</a>
+</b><h3><b><a name="Move"><u>Move to Smokeless Tobacco</u></a></b></h3>
+<p><b>Cigarette sales in the United States have been 
+<a href="#" onmouseover="doTooltip(event,20)" onmouseout="hideTip()">declining</a>
+over the last two decades. </b></p>
+<p><b>Tobacco companies are looking for alternative tobacco
+products to bolster their growth and halt the decline. They think they found their
+salvation product - smokeless, spitless portioned tobacco packets (sachets) -
+<a href="#" onmouseover="doTooltip(event,13)" onmouseout="hideTip()">tea-bag like pouches.</a>
+<p><b>Smokeless tobacco has grown in popularity as restrictions on
+public smoking have increased. Smokeless tobacco product sales have increased
+more than 30% in the past 10 years. Moist snuff (finely ground tobacco, also called dipping tobacco)products have
+ been growing at
+4% to 5% for the past five years as smoking bans make it harder to light up in
+public places. In 2006 the moist snuff market jumped almost 10% and from 2001 to 2005 the number 
+of adult consumers of smokeless tobacco rose from about 4.7 million to about 6 million. U.S. 
+cigarette sales still far exceed smokeless at more than $70 billion vs. more than $3 billion (Going Smokeless, John 
+Reid Blackwell, Richmond Times Dispatch, 4/9/2007).
+As a result of the increased consumption of moist snuff there's now a
+<a href="http://southeastfarmpress.com/mag/farming_outlook_bright_dark/index.html">demand for dark
+fire-cured and air-cured tobacco.</a>  </b></p>
+<p>According to Convenience Store News (7/11/2007), there has been a significant surge in the Other Tobacco Products (OTP) category.
+ With bans on public smoking escalating, adult smokers are looking for options to satisfy their tobacco needs. 
+As a result, the OTP category increased by over 10 percent year-to- date 2003 over prior year, making it the third fastest
+ growing in-store category in the convenience channel. Despite battling such legislative issues as non-self service and 
+increased taxes, moist snuff tobacco sales have almost doubled from what they were 20 years ago.</p>
+<p>Scandinavia and the U.S. are the world's largest markets for moist snuff. In Sweden  and Norway there are well over
+a million consumers - both men and women - who regularly use snus. Consumption in Scandinavia totals approximately 250 million
+cans of snus per year. Consumption in the U.S. in 2006 is estimated at more than 1 billion cans per year.  During the past few years,
+the American moist snuff market has grown by about 6% annually and during 2006 the market growth rate accelerated to 10%.The portion
+packed category in the U.S. is rapidly growing, up by more than 15% in 2006, and now accounts for approximately 7% of the 
+cans of moist snuff sold in the U.S.  The growing value-priced segment is a significant factor in growth of the overall stuff caregory 
+in the U.S. Retail prices vary considerably, with premium priced products in many cases double the price of value-priced 
+products. (source: AC Nielsen) </p>
+<p><b>The tobacco giants Philip Morris USA and Reynolds American, Inc. are ready to jump
+into the moist snuff arena reasoning we now have an adjacent tobacco product
+that does not have to be smoked and could be less harmful than cigarette
+smoking. Now Lorillard Tobacco Company(October 25, 2006), the third largest manufacturer of
+cigarettes in the United States, has announced an agreement with Swedish Match North American - 
+see more information below.
+<a href="#" onmouseover="doTooltip(event,15)" onmouseout="hideTip()">The U.S. Smokeless Tobacco Market.</a>
+</b></p>
+<p><b><img src="taboka_philip_morris.jpg" length="80" width="80">
+Philip Morris has started this month  (July 2006) test marketing Taboka(tuh'-BOH-kuh) 
+Tobaccopaks - smoke-free, spit-free tobacco pouches of moist snuff (that 
+does not have to be refrigerated) in the 
+Indianapolis area. Phillip Morris hand-picked Indianapolis as the test market for Taboka.
+ They say that Indianapolis represents the US market as a whole. 
+(Last
+March the city recently adopted
+a smoke-free ordinance. People for a Smoke Free Indy are troubled that this
+type of product may discourage their efforts to help tobacco users to quit
+creating a &#8220;haze of confusion.&#8221;) The small pouch is placed
+<a href="#" onmouseover="doTooltip(event,12)" onmouseout="hideTip()">between the upper lip and gums</a>
+ for five minutes to 30 minutes and
+then thrown out. Each tin carries 12 pouches of tobacco and costs about the
+same as a pack of Marlboro cigarettes. Taboka is available in regular and
+menthol flavor (Taboka Green - menthol is not a traditional moist smokeless flavor) 
+and will be manufactured in the USA. 
+<blockquote>The Taboka Tobaccopaks™ are smoke-free, spit-free, pasteurized tobacco pouches that come in two versions,
+ Original and Taboka Green, the menthol version. Taboka is manufactured in Richmond, Va. and uses pasteurized, 
+U.S.-grown tobacco. Taboka, which does not need to be refrigerated, is intended to be merchandised in the 
+cigarette category. The nicotine content of each pouch is as follows: Original : 4.3 mg, Menthol : 4.4 mg
+(to put this into perspective an average Marlboro Full Flavor cigarette contains 1.0 mg of nicotine).
+</blockquote>
+<p>"Tobacco stock analyst
+<a href="#" onmouseover="doTooltip(event,27)" onmouseout="hideTip()">Bonnie Herzog</a>
+  of Citigroup, New York says, “We’re not sure we love the Taboka brand name and 
+hope Philip Morris appreciates how important the merchandising of this new product will be. In other words, the company 
+will have to be very clear in its communication with consumers so they understand what in fact this new product is.”
+(Convenience Store/Petroluem Daily News, 5/4/2006)</p>
+<p>Jennifer Golisch, spokesperson for Philip Morris,
+ says the company does not manufacture
+ or market snuff, and uses the term “smokeless” for their new spitless pouches.</p>
+<p>The name <u>Taboka</u> is very similar to the
+ Norwegian snus production
+and marketing company <u>Taboca AS</u>. One of their premium brands of snus is called
+<u>Taboca</u>. It is interesting to note the 
+tobacco used by Taboca AS is obtained from Cuba.</p>
+<p>On 13 July 2006, Taboca, a Norwegian snus manufacturer and marketer, 
+announced that it signed a co-operation agreement with RJ Reynolds Tobacco Co that includes
+ an exchange of services with one another and an intent for Taboca to launch a snus product in
+ the US within the next twelve months. No other details of the agreement were provided. ("RJ Reynolds 
+co-operates with snus maker," Tobacco Journal 
+International (TJI) Newsletter July 26, 2006) </p><br>
+Tuesday, November 21, 2006 Tobacco Reporter: Taboca A/S, a Swedish marketer of snus, has hired Richard C.
+ Cutler as
+ executive vice president, business development. Cutler will be responsible for creating a foundation 
+for the successful launch and continued development of Taboca's smokeless tobacco business in North America.
+            “We are delighted to have Rich join our executive management team at Taboca," said CEO Darren
+ Quinn. “His more than 30 years of proven experience in the tobacco industry will further ensure successful
+ product introductions and sales growth throughout the North American market and beyond.”
+ Taboca's manufacturing and product development is conducted by its wholly owned subsidiary, 
+Nordic Snus Manufacturing AB, in Gotland, Sweden.</b></p>
+<p><b>While we will not provide detailed information about our test market for competitive reasons and 
+because it is too early, I can tell you that we are pleased with the strong distribution we have
+ achieved in more than 2,000 retail stores across Indianapolis and the initial response to Taboka from 
+adult consumers who have tried it in the marketplace. Taboka is our first product in an adjacent category
+(part of PM's adjacency growth strategy)
+ and we expect to bring other new products to market in the future (Remarks by Michael E. Szymanczyk 
+Chairman and CEO Philip Morris USA at Prudential Consumers Conference, Boston, 9/7/2006). 
+<a href="PM_Szymanczyk_Remarks_Taboka_9_7_2006.html">Mr. Szymanczyk remarks describing Taboka.</a></b>
+Other comments on the test marketing of Taboka: has not released any sales figures, citing competitive reasons.
+ John R. Nelson,
+Philip Morris' president of operations and technology would only say that the company has learned a lot 
+from the test market. "The smokers who try it find it to be a good tobacco product. Whether that means 
+they are going to switch from cigarettes to this product, we have to wait and see," Nelson said
+(Going Smokeless, John Reid Blackwell, Richmond Times Dispatch, 4/9/2007)</b>. </p> 
+<p><b>Thursday, October 5, 2006—Philip Morris International (PMI) has acquired through one of its affiliates 
+Rocker Production AB (Rocker), a privately owned manufacturer of snus. "I am extremely pleased with this
+acquisition, which provides an entry for PMI into the profitable and growing market for snus in Sweden,"
+said Jos Arkes, area director Nordics, PMI. "The acquisition of Rocker will allow PMI to gain product 
+development and manufacturing expertise in this important market segment, where we are not currently present."
+Rocker, located in Arvika, Sweden, manufactures and sells the Rocker brand of snus and, according to
+AC Nielsen figures, accounted for 0.1% of the Swedish snus market during the first half of this year.
+According to Swedish tax authority data, snus accounts for 52.5 per cent of the total amount of tobacco
+sold in Sweden and PMI expects snus to have a yearly growth rate of 0.4 per cent, based on current market 
+trends. The acquisition is not expected to have a near-term impact on PMI earnings.</b></p>
+<p>Richmond Post Dispatch 2/11/2007 - Univeristy of Virginia (UVA) receives a $25 million gift from Philip Morris USA (PM). The bulk 
+of which will be used for research into preventing youth smoking and reducing the harm caused by smoking. Michael Szymanczyk,
+Chairman and CEO of PM indicated he was approached by UVA to support the fund raising campaign. Szymanczyk said that regardless
+of the economic impact, we cannot ignore the fact that cigarette smoking is addictive and causes severe diseases. As cigarette
+sales in the U.S. decline, the company is venturing into the growing market for smokeless tobacco products.
+PM is test-marketing one smokeless product in Indianapolis, IN and is investing $100 million to re-equip a previously 
+shuttered plant in York County, VA. PM also is investing in a $350 million research center (in Downtown Richmond)
+to help develop new products.
+(Richmond Post Dispatch 2/11/2007). NOTE: NO MENTION OF THE DANGERS OF TOBACCO ITSELF ONLY SMOKING TOBACCO..
+Philip Morris USA is planning to make a smokeless tobacco product called Taboka at its 144,000-square foot 
+plant in York, a Virginia Department of Economic Partnership memo said. The plant, which has been idle since 2004,
+ will reopen later this year. Taboka fits the company's "adjacency strategy," which means the product will be 
+tobacco-related, but not cigarettes (Daily Press by the Associated Press, 2/11/2007).  
+<br><br>
+<font size="4">June 9, 2007 - Philip Morris USA is introducing a 
+smokeless product under its Marlboro brand name called Marlboro SNUS pouches (Marlboro 
+Snus will be packaged in a Slidepak that holds 12 pouches).
+Right now PM is test marketing a smokeless, spitless product called 
+<a href="taboka_philip_morris.jpg">Taboka (Tobaccopaks) Original and Taboka Green</a>
+(the menthol version) in Indianapolis, IN. The field testing of this product will continue. PM indicates that 
+have leasrned a lot from the Taboka test and are applying those learnings tot he Marlboro SNUStest market. 
+ Starting in August 2007 Marlboro SNUS
+will be introduced in the Dallas/Fort Worth area and will come in 4-varieties: rich, mild, mint and spice. 
+<a href="http://philipmorrisusa.com/en/popup_marlboro_snus_fact_sheet.asp">PM New Product Fact Sheet.</a> </font>  
+  <br><br> 
+Philip Morris is planning to sell a smokeless, spit-free tobacco pouch called Marlboro Snus will be manufactured in Virginia 
+at a plant in York County. Company spokesman Steve Callahan says production will start this month ahead of a consumer test
+ launching in the Dallas-Fort Worth area in August.(June 2007, WWBT-TV, Richmond, VA) 
+<br><br> 
+Citigroup tobacco analyst Bonnie Herzog believes that the entrance of the new spitless pouches catering to smokers is 
+a positive move. She anticipates "rapid expansion, given what PM has learned from Taboka snus." Herzog also said that using
+the Marlboro name to sell the product will attract the majority of smokers that will cross over into the smokeless market.
+(American Wholesale Marketers Association Update)
+<br><br> 
+<p><b>
+<img src="CamelSnus_spice.jpg" length="80" width="80">Reynolds American this summer (2006)is test marketing a similar
+product that is refrigerated prior to purchase called Camel Snus (snus is the
+name used in Sweden for
+moist snuff) in two cities - Austin, TX and Portland, OR.
+(It is felt that it would be easier marketing
+the product if it was tied to popular cigarettes that people already recognized.)
+It comes in three varieties: original, frost and spice and is touted as "another tobacco pleasure" for adults
+that can be used "anytime, anywhere" (MSNBS Money May 18, 2006, 11:41pm ET). 
+Camel Snus is touted as "another tobacco pleasure" for adults, that can be used "anytime, anywhere.
+<a href="Camel_Snus_Bonnie_Herzog_cmts.html">Camel Snus</a> will be
+manufactured in Sweden in conjunction with British American Tobacco, Inc. (BAT) and kept refrigerated
+until the tin is sold. (BAT is the largest stockholder in Reynolds American
+with approximately 42% of shares.</b></p>
+<p> <a href="RAI_performance_2006.html">Summary Reynolds American Inc. 2006 Financial Results</a>
+Daniel M. Delen (joined R.J. Reynolds Tobacco Company as president on January 1, 2007) said
+ "He was pleased with the Camel Snus test market, which is providing valuable learning that will enhance
+ the product's potential." Conwood's performance in 2006 further solidified the company's position as the smokeless-tobacco
+ growth leader, with the company delivering strong gains in volume, market share and profits. In 2006, one of every four 
+cans of moist snuff sold in the United States was manufactured by Conwood. (February 8, 2007)</p>
+<p><b>In about May 2005 BAT introduced
+two new snus products - one an extension of its Lucky Strike cigarettes and
+the other of its Peter Stuyvesant cigarettes--in Johannesburg, South Africa and
+Stockholm, Sweden for consumers. (Anton Rupert, a South
+African billionaire owns about 28% of BAT.) BAT opened a new facility to research and test new
+snus products at its Southampton, England laboratories this month.</b></p><br><br>
+<font size="4">June 8, 2007 - The word on the street is that R.J. Reynolds Tobacco is expanding its test marketing of 
+<a href="#" onmouseover="doTooltip(event,26)" onmouseout="hideTip()">
+Camel SNUS (three varieties: original, frost and spice)</a> into 
+North Carolina. Reynolds is paying c-store owners extra for the placement of promotional material where it 
+gets the maximum exposure. Sellers are told to emphasis that this product can be used anywhere, anytime and anyplace no one will ever know.
+<font size="5">Just what the youth of America need to know.</font></font> 
+<br><br>
+<b>June 13, 2007 The Raleigh test market would include
+convenience stores and tobacco-retail outlets as far west as the eastern part of Greensboro, R.J. Reynolds Tobacco spokesman 
+David Howard said yesterday. Reynolds also has selected Columbus, Ohio, Indianapolis, Kansas City, Mo., and Orlando, Fla.,
+ as test markets, according to Rob Dunham, a vice president of new growth innovation. "We’ve determined that Camel Snus is a 
+viable product concept that we will now make available in several thousand retail outlets in the seven test markets," Dunham said. 
+He said that Reynolds has not set a timetable for distributing and marketing Camel Snus nationally. R.J. Reynolds Tobacco Co.
+has chosen Raleigh as one of five new test markets for its Camel Snus smokeless products, <u>beginning July 1, 2007</u>
+The company has been testing the snus products in Austin, Texas, and Portland, Ore., for more than a year. (Winston-Salem Journal - journalnow.com) Philip Morris 
+has been testing Taboka Tobaccopacks in the Indianapolis area since July 2006. (TobaccoWatch.org). </b>
+<br><br><br> 
+<p><b><img src="ussmokeless_tobacco_logo.jpg" width="100">
+U.S. Smokeless Tobacco Co. (in 2001 U.S. Tobacco Company changes its name to U.S. Smokeless Tobacco Company - UST)
+<img src="UST_revel_smokeless_tobacco.jpg" length="75" height="75"> 
+<a href="http://phx.corporate-ir.net/phoenix.zhtml?c=75256&amp;p=irol-newsArticle&amp;ID=513032&amp;highlight=">
+Revel
+since August 2001 - a small paper packet
+of moist ground tobacco with flavors like mint, wintergreen and cinnamon
+about the size of a piece of gum - &#8220;a chicklet&#8221;).</a> 
+<a href="UST_Revel_ad_July_2003.jpg">
+Revel</a> was tested 
+marketed for the 1st 6-months in Topeka, KA and Youngstown, OH.
+This month (July 2006) UST will come out with a similar
+product to Revel called
+<img src="Skoal_Dry_3_Flavors.gif" length="125" height="125">
+ Skoal Dry Tobacco Packs and will be test marketed in Louisville, KY
+and in Austin, TX going head-to-head with Camel Snus. Skoal Dry
+comes in three flavors: regular, menthol and cinnamon and will sell for
+$3.50 - $4. a pack or about the same as a pack of premium cigarettes. Each can 
+will contain about 20 tobacco pouches. (Tobacco Journal International August 3, 2006)
+The Skoal Dry web site indicates this product is exclusively for adult smokers who still
+want to enjoy real satisfaction without the restrictions of smoking. Other tags: No Spit No Smoke No
+Boundaries, A suprisingly refreshing experience, Skoal Dry is discreet so others wouldn't notice you're enjoying it.
+(Packets are suppose to be smaller than with Revel).
+</b></p>
+<p><b>The launch of Skoal Dry will likely spell the end of the five-year experiment with Revel, said Murray Kessler,
+ USTâ€™s president and chief operating officer. Skoal Dry uses a bigger pouch than Revel and uses a new 
+technology to coat each bit of tobacco with additional flavor. With Revel, the company faced the twin hurdles
+ of introducing an unfamiliar product and doing it with a name that had no familiarity to consumers. It was found,
+ that nine out of 10 smokers who tried smokeless still rejected the product.  Mr. 
+Kessler still thinks that Skoal Dry is the wave of the future. (UST could end test of Revel brand by 
+year's end, Tobacco Journal International (TJI) Newsletter June 22, 2006)</b></p><b> 
+<p>Skoal Dry is packaged in sleek beveled cans with lithograph metal lids. As with all Skoal products,
+ Skoal Dry cans also feature
+a 'guaranteed fresh-until" date stamp. A special introductory price is in effect. The test-market launch
+is being supported by point-of-sale signage and branded displays that feature Skoal Dry tagline,
+ "No Smoke, No Spit, No Boundaries." Further support is being generated by local adult sampling, direct mail,
+print advertising and an age-verified website, http://www.skoaldry.com.  Through its subsidiaries,
+U.S. Smokeless Tobacco Company is a leading producer and marketer of moist 
+smokeless tobacco products. The company's primary brands are Copenhagen, Skoal, Red Seal and Husky.(Press
+Release, Source: U.S. Smokeless Tobacco Company, Monday, August 7, 2006) </p>     
+<p>Kessler has said that UST will use $100 million in spending reductions on marketing and discounts to fight Philip Morris 
+and Reynolds(journalnow.com/business, 9/8/2006).The Greenwich, Conn.-based company, whose snuff brands include Skoal and Copenhagen, announced plans Monday (9/18/2006) to cut
+ 218 positions nationwide as part of a bid to save $100 million over the next three years.
+ UST has other manufacturing operations
+ in Franklin Park, Ill., and 
+Hopkinsville, KY.. UST Inc. has cut 149 white-collar employees, the majority of them at its Greenwich headquarters, 
+as it implements the dramatic cost-cutting program. In addition, 25 jobs will be eliminated in Nashville, including
+ the layoffs of 17 people, as the snuff-maker cuts its salaried work force by 10 percent nationally because 
+of a dip in sales.</p>
+<p>The cigarette guys are getting into our business because we are converting a fair number of smokers," Kessler said in the 
+interview last month. Two of three smokeless tobacco users previously smoked, he said. 
+(The Advocate, 9/19/2006) The company says that about 62% of the moist smokeless tobacco users who have been
+ using it for one year or less , first used cigarettes (Going Smokeless, John Reid Blackwell, Richmond Times
+Dispatch, 4/9/2007).</p>
+<p>UST's Chief Operating Officer Murray Kessler confirmed that the company will not stay in Greenwich -- its home for the 
+past 36 years. Its 125,000-square-foot building will be put on the market within the next 90 days, he said. And there's been
+no decision as to where UST will move, he said. 'We are looking in Fairfield County,' said Kessler, adding that the company
+is mapping where employees live to pick a location convenient to the majority of its work force. 
+(Greenwich Times, Julie_Fishman-Lapin, 10/6/2006)</p>
+<blockquote>
+UST was formed in 1986 as a publicly traded holding company for United States Tobacco Co., which started in 1911 with the
+dissolving of the tobacco monopoly of James Buchanan Duke. The tobacco unit was renamed U.S. Smokeless Tobacco Co. in 2001.
+ UST also makes Columbia Crest, 
+Chateau Ste. Michelle and other wines in the state of Washington.
+In 1983, UST introduced Skoal Bandits, small, "tea-bag" pouches of wintergreen-flavored tobacco designed for novice snuff users.
+Its four-week $2 million ad campaign for New York City touted the Bandits as an alternative to smoking and invited 
+potential users to "take a pouch instead of a puff." By 1990, Bandits comprised 5 percent of UST's business. 
+</blockquote>
+<p> It also is reviewing other cost-saving options, including moving its headquarters from  Greenwich, 
+Connecticut.
+The cuts come as the company tries to deal with stronger competition from cigarette-makers Philip Morris USA and R.J. Reynolds 
+Tobacco Co., which are beefing up their efforts in the smokeless tobacco market as more states and cities ban smoking in
+public places. The company has vowed to be aggressive cutting costs (The Tennessean, 9/19/2006).</p>
+</b><p><b><img src="Swedish_Match_words.jpg"> Swedish Match (SM)is a unique company with its range of market-leading brands 
+in the product areas of snuff and chewing tobacco, 
+cigars and pipe tobacco -- tobacco's niche products -- as well as matches and lighters. SM is the leading global
+ manufacturer of matches and the third-largest manufacturer of disposable lighters. 
+SM is the leading producer of snuff products in 
+Sweden and now has a presence in the U.S.  - Swedish Match North America located in 
+Richmond, VA. and produces loose leaf and moist snuff tobacco in Owensboro, KY. (Pinkerton Tobacco Company of Owensboro 
+had produced Red Man since 1904 - the leading brand of chewing tobacco in the United States. In 1985,
+ Pinkerton was acquired by a Swedish corporation and (after further corporate reshuffling) the Red Man brand now falls under
+ the umbrella of the Swedish Match company.)
+This company has been marketing moist snuff products (Timber Wolf, Longhorn,
+Renegade portions) in the states since 2001. Swedish Match North America, Inc., offers two primary 
+moist smokeless brands.
+<img src="TimberWolf2005.jpg" length="80" height="80">
+ Timber Wolf is said to be a high-quality alternative to premium-priced moist snuff brands and a 
+leader in the
+ price-value segment. Timber Wolf accounts for 20 percent of price-value brand sales (AC Nielsen YTD 2005). 
+According to Swedish Match,
+<img src="Longhorn_snus.jpg"> Longhorn is one of the fastest-growing moist snuff brands in the marketplace. It
+ is positioned 
+as a high-quality product with premium branding at an “everyday low price” and is available in six flavors/cuts.
+MYRTLE BEACH, S.C. 2/23/2007 -- The Hooters Pro Cup Series is pleased to announce that Longhorn, a leading
+ value-priced moist snuff brand manufactured by Richmond, Va. based Swedish Match, will return to the series
+ as the "Official Tobacco Product" for the 2007 season (by Paul Warner, WhoWon.com). 
+</b></p>
+<p><b>Swedish Match North America, Richmond, Va., has announced that as a result of solid market performance in 
+Washington, D.C. and New York City, it has introduced reduced-harm tobacco products for cigarette smokers in both
+Chicago and Minneapolis. General and Exalt, both premium brands of Swedish snus (oral moist snuff), can be found in local
+tobacconists throughout these metropolitan areas (Tobacco Retailer, October, 2004).</b></p>
+<p><b>STOCKHOLM (AFX, 11/29/2006) - Swedish Match AB hiked its 2006 growth forecast for the US moist snuff market, to 9-10
+ pct from 8 pct, the news agency Direkt report citing a company spokesman. </b></p>
+<p><img src="Lorillardsmokes.jpg">
+GREENSBORO, N.C., Oct. 25, 2006 /PRNewswire-FirstCall/ -- Lorillard Tobacco
+Company today announced that it has entered into an agreement with Swedish
+Match North America to jointly develop and market a select line of
+smokeless tobacco products in the United States. The parties anticipate
+that an initial product offering may be launched on some basis of
+geographic distribution in the not too distant future.
+    Swedish Match North America Inc. is the third leading manufacturer of
+moist snuff in the United States, with such well-known brands as TimberWolf
+and Longhorn moist snuff, and is a leading manufacturer of Other Tobacco
+Products, such as Red Man chewing tobacco, Half & Half pipe tobacco, and
+White Owl and Garcia Y Vega cigars. Swedish Match North America Inc. is a
+US subsidiary corporation of Swedish Match AB, a Swedish corporation.
+Swedish Match shares are listed on Stockholmsborsen (SWMA).
+    Lorillard Tobacco Company is the third largest manufacturer of
+cigarettes in the United States, including the Newport brand, the best
+selling menthol cigarette in the country, and the Maverick, Old Gold, Kent
+and True brands. Lorillard is a wholly owned subsidiary of Loews
+Corporation (NYSE: LTR; CG). Source: Lorillard Tobacco SOURCE Lorillard Tobacco Company</p>
+<p><b>Blue Whale, based in King of Prussia, Pennsylvania, will introduce a fourth new product - 
+a smokeless tobacco substitute without a pouch made of black tea and nicotine extract - in August 
+2006. Blue Whale's TV and print ads feature a woman's manicured hand lifting a can of Blue Whale from
+ a man's rear jeans pocket. The company will also advertise on radio, and offer free samples. 
+The U.S. Food and Drug Administration has no jurisdiction over tobacco products, but Blue Whale does
+ not contain tobacco and could be considered a food product. The company says the regulator has told
+ it that agency approval was not required for its smokeless tobacco substitute. But Matthew Myers,
+ president of the Campaign for Tobacco-Free Kids, predicted that the FDA would eventually ban
+ Blue Whale.</b></p>
+<b>    
+<p>Test marketing is most likely just a formality, and then these
+snus-like products will be sold in retail stores nationwide. Convenience store
+owners are anxiously waiting for the new tobacco product to arrive on their
+shelves. For the last few years they have experienced ever-dwindling margins on
+cigarettes and the number of cigarette smokers decreasing. </p>
+<blockquote> <u>Comments Star Scientific Inc.,based in Chester, VA</u><br><br>
+August 9, 2006 - There was heightened activity in this market segment recently as test markets for several
+ smokeless tobacco  products were launched in Austin, Texas and Indianapolis, Indiana. However, 
+those products (Camel Snus, Skoal Dry and Taboka), 
+like a number of others, are pouches of smokeless tobacco that must be inserted into and then removed 
+from the mouth after use. 
+Both 
+<img src="Ariva_Star_Tobacco.jpg" height="75" width="75">
+Ariva(R - introduced in 2003) and 
+<img src="stonewall_star.jpg" height="100" width="100">
+Stonewall Hard Snuff(R - introduced in 2001) Star products are distinctly different, however: as the only completely dissolvable 
+smokeless tobacco products in the marketplace, there is neither residue nor spitting involved with either product.
+Stonewall is a larger version of Ariva, so it may appeal to heavier smokers. Like Ariva it is flavored with 
+wintergreen. <br><br> 
+Chester, VA Business Wire - Aug 9, 2006 - Star Scientific Reports on Second Quarter 2006 Results
+An independent analysis of Star's smokeless tobacco products recently validated the extremely low TSNA levels in Ariva(R) and
+ Stonewall Hard Snuff(R). That analysis tested TNSA levels in a variety of smokeless tobacco products available both in the United
+ States and in Sweden and was conducted by a researcher at the University of Minnesota, who presented the results in June 2006 at a 
+conference at the National Institutes of Health (NIH). The TSNA levels in Ariva(R) and Stonewall Hard Snuff(R), as reported there,
+ are .19 and .28 micrograms per
+ gram, more than three times lower than the next-lowest TSNA product level of .99 micrograms per gram, found in Revel pouches.
+The Ariva(R) and Stonewall Hard Snuff(R) TSNA levels, as reported in this analysis, also are 25 times lower than those found 
+in the Skoal Long Cut product, and 30 times lower than those found in the Copenhagen Long Cut product. Star believes that these
+ figures speak for themselves, and that continued expansion of Ariva(R) and Stonewall Hard Snuff(R) distribution and consumer
+ acceptance can ultimately make an important impact on the risk associated with conventional tobacco use. One component of the
+ company's efforts to meet these goals includes continued development and test marketing of a new flavor of Stonewall Hard 
+Snuff(R), during third quarter 2006, that will be known as "Natural".
+Monday, 3/19/2007 - Star revealed that, in addition to its efforts to promote its dissolvable
+ tobacco brands, Ariva and Stonewall Hard Snuff, it would focus on developing new flavors for both the brands,
+ providing better choice to tobacco users in selecting either smoking or using the transitional moist snuff
+(TradingMarkets.com).
+<br><br>
+Chester-based maker of the smokeless product suggests pending patent suit a factor
+Jump to full article: Richmond (VA) Times-Dispatch, 2004-12-21
+Author: JOHN REID BLACKWELL / TIMES-DISPATCH STAFF WRITER
+Intro: Cigarette maker R.J. Reynolds Tobacco Co. has stopped test-marketing an alternative tobacco product manufactured by
+ a Virginia
+ company. Chester-based Star Scientific Inc. said yesterday that it was notified by Reynolds last week that its test market 
+of Star's "hard snuff" smokeless tobacco product was "deemed unsuccessful" and has been terminated.
+Star, a maker of discount cigarettes and smokeless tobacco, signed an agreement in April 2001 with Brown & Williamson
+ Tobacco Corp., then based in Louisville, Ky., to test-market the product, a spitless tobacco lozenge advertised 
+as an alternative to cigarettes. B&W; began selling the product in Louisville last year, initially under the brand name
+ <b>Interval</b>, a Star spokeswoman said.
+</blockquote>
+<br><br>
+<h3><b><a name="HIGHEST"><u>HIGHEST PRIORITY - Keeping Kids from Using Tobacco Products</u></a></b></h3>
+<p><b><font color="#ff0000" size="5">Our highest priority
+has to be keeping children from beginning to use tobacco products.</font> 
+Except for Sweden snus (moist snuff) is outlawed by the European Union
+mainly because it was deemed an attraction to children, who would become easily 
+hooked and move on to cigarettes. (Other countries where smokeless tobacco products are banned including
+moist snuff are New Zealand, Australia, Hong Kong, Japan, Switzerland and Israel (S Chapman, 
+Public health advocacy and tobacco control: making smoking history, Oxford: Blackwell 2007).
+As Dr. Richard Carmona, 17th Surgeon General of the 
+United States has stated, "Young people
+may be especially attracted to smokeless tobacco if they perceive it to be safer
+than cigarettes. The evidence is clear that the use of smokeless tobacco is a gateway
+to cigarettes." "Smokless tobacco is a threat to our nation's public health, 
+<a href="http://www.house.gov/schakowsky/press2003/pr06_03_2003smoke.html">
+especially to the health of our children</a>," -
+U.S. Representative Jan Schakowsky, June 3, 2003.</b></p><b> 
+</b><p><b>Kids are well aware of what is happening.. theyâ€™ve been told over and over again how bad tobacco smoking can  be  -  it kills.
+ Now - you have public health officials telling people how safe this alternative is and you can still get the same
+ amounts of
+ nicotine 
+(perhaps even more) and much lesser chance of developing a disease. Nicotine addict - studies show after a few cigarettes - the 
+average person starts being addicted to nicotine.
+Smokeless tobacco delivers a high amount of nicotine. Patricia Richter of the CDC’s Office on Smoking and Health. ‘‘The amount 
+of nicotine absorbed per dose from using smokeless tobacco is greater than the amount of nicotine absorbed from smoking 
+one cigarette.’’ An average dose of nicotine for snuff is 3.6mg, for chewing tobacco 4.6mg
+ and 1.8mg for cigarettes (ACS). 
+ Many fear that by endorsing smokeless tobacco as an alterative to tobacco smoking will draw in
+ lots of new customers - the youth of America.</b></p>
+<p><b>Weâ€™re afraid this generation of youngsters will not be able to
+reach their full potential - their crutch will always be nicotine
+addiction. In addition, tobacco is considered to be as gateway drug
+which may lead to alcohol, marijuana and illegal drug use. One study
+found that snuff consumers consume more alcohol that those that smoke
+cigarettes (Wickholm S et al., Community Dent Oral Epidemiol. 31(4): 265-274, 2003).
+ Another study found that the nicotine in smokeless tobacco
+reduces an individuals ability to perform complex tasks that require
+hand and body movements to adjust to new visual feedback. Donâ€™t you
+want your child to reach their full potential instead of relying on
+abused drug to satisfy their addiction the rest of their lives??</b></p>
+<p><b>The European Court of Justice ruled on (December 2004) Tuesday
+that an EU ban on the sale of snus - Swedish snuff tobacco - should
+remain in force. Noting the risk that young people would become
+addicted to nicotine if they begin to use snus, the Court said that its
+decision was motivated by a desire to protect the health of European
+citizens.
+A lethal dose of nicotine, a neurotoxin used as a insecticide, is
+contained in as little of three cigarettes - only a fraction
+of the nicotine contained in a cigarette is actually released into the
+smoke. There are stories about how people have fallen asleep with the
+pouch left inside their mouth. - higher amounts of nicotine in pouch
+then cigarettes. 
+In Sweden, an average SNUS user did so for 13 hours a day, and some nicotine-addicted
+users even kept a pouch under their lip when they went to sleep, so they 
+would not wake up a 4:00am with a craving (Dr. Gunilla Bolinder, director of education at Stockholm's
+Karolinska University Hospital, SNUS gets the thumbs-down News-24 1/31/2007).   </b></p><b> 
+</b><p><b><u>No federal regulations in place</u>
+- tobacco products remain virtually unregulated in the
+ United States. Without federal
+regulations <b>for our kids sake</b> - we must say no to SNUS. A bill giving the FDA the authority to
+regulate tobacco products failed to pass congress in 2004. An identical FDA
+legislation was reintroduced in March 2005 and is still pending. The proposed
+FDA legislation would regulate the sale, marketing and manufacture of all
+tobacco products. It would also prohibit all flavorings in cigarettes except
+menthol. As Matthew Myers, Campaign for Tobacco Free
+Kids, points out - &#8220;with the absence of FDA authority over tobacco products - 
+the tobacco companies are free to
+market their new smokeless tobacco products in ways to encourage kids to start
+using tobacco and discourage smokers from quitting tobacco entirely. If Senate Bill 666 
+(DeWine-Kennedy Bill)had already been enacted to regulate tobacco products it would 
+ensure that the marketing of each smokeless product did not discourage current tobacco 
+users from quitting or encourage new users to start. On Thursday (2/15/2007) congressional lawmakers 
+renewed (reintroduced legislation)a push for federal regulation of tobacco, a step they say is needed to deter children
+from lighting up and to get smokers to quit (The News & Observer 2/16/2007).
+On Tuesday (2/27/2007), the Senate Health, Education, Labor and Pensions Committee is scheduled to hold 
+a hearing on the legislation, opening a new battle in the tobacco wars. The legislation, aimed at combating 
+youth smoking, would give the FDA authority to restrict tobacco manufacturing, sales and marketing.
+(FOR YOUTH ALL TOBACCO PRODUCTS NOT JUST CIGARETTES)
+An op-ed piece by Dr. Alan Blum
+(Director of the University of Alabama's Center for the Study of Tobacco and Society) argued that the 
+legislation would give No. 1 cigarette-maker Philip Morris "a virtual monopoly" in the current cigarette market
+ and continue to furnish special protection for the company. "The fact that Philip Morris is supporting 
+the bill is strong evidence it's not good for the public health," said Stanton Glantz, director of the 
+Center for Tobacco Control Research and Education at the University of California at San Francisco. "It needs 
+to be fixed to the point that PM doesn't support it," Glantz said (Tobacco Control Bill Gets Hearing by Peter 
+Hardin, Richmond Times-Dispatch 2/26/2007). </p>
+<p>In Sweden snus is regulated as a food product.
+Sanitation requirements in Swedish snus factories are the same as those used in
+food production. All additives are approved as food additives. (Although snus is not a food, in Sweden
+ it is currently governed by the food legislation. This means that the ingredients used in snus must 
+be approved according to the food legislation and the same stringent hygiene demands as for the 
+manufacture of foodstuffs is imposed, and adhered to.)  </b></p>
+<p><b> Even Chris Proctor, Head of Science and
+Regulation for British American Tobacco has stated, &#8220;Weâ€™re also responding to public health stakeholders
+who told us they believe snus, <font size="4">properly regulated</font>, can contribute to reducing
+the impact of tobacco on public health. We hope more stakeholders, including
+governments, will agree.&#8221; Hyland et al. (Addictive Behaviors 31:1190-1200, 2006) have concluded that only 
+<u>under strict regulations</u>
+the increase in low-nitrosamine smokeless tobacco use could reduce overall smoking prevalence yielding 
+potentially substantial health benefits. <br> 
+Kids would just love this feature, e.g., with Skoal Dry discreet so others wouldn't notice you're enjoying it.
+ <br>  
+ <font color="#ff0000" size="4">Well - at the
+present time we have no federal regulations on tobacco products in the USA.</font> 
+<br> 
+</b></p><h3><b><a name="Tobacco" companies=""><u>Tobacco Companies Claim Targeting Current Smokers</u></a></b></h3><b> 
+</b><p><b>Philip Morris in the Taboka Fact Sheet states at least three
+times that this product is for adult smokers interested in smokeless tobacco
+alternatives to smoking. But is this true - they provide information for
+parents to convince your child not to smoke yet have promotions to 
+<a href="#" onmouseover="doTooltip(event,19)" onmouseout="hideTip()">buy one 
+and get one free</a> 
+making it easier for kids to afford to buy
+cigarettes. Their international record especially in developing countries is
+disgraceful, e.g., Philip Morris recently made headlines in the Ukraine after
+releasing a billboard featuring a pregnant woman or how about Philip Morris
+concerts in Niger where kids as young as 10 were given free cigarettes.
+In Indonesia, Dji Sam Soe, Philip Morris-owned Sampoerna's flagship best-selling brand, 
+has twice the amount of nicotine and three times the amount of tar of
+ a conventional cigarette.</b></p>
+<p><b>We all know that Reynolds American doesnâ€™t even care if they knowingly
+market indirectly to kids. They have been masking the regular tobacco flavor
+and scent in favor of flavored cigarettes ranging from watermelon (&#8220;Beech Breezer&#8221;)
+to berry (&#8220;Bayou Blast&#8221;) to pineapple and coconut (&#8220;Kauai Kolada&#8221;) to make it
+even more appealing for youngsters to take the initial puff and keep smoking
+until he or she gets hooked. Reynolds
+has been aggressively targeting the youth and young adult market with several
+recent marketing campaigns that seek to link smoking with alcohol use, gambling
+and rebellious behavior. The report details how R.J. Reynolds recently sold
+alcohol- flavored cigarettes as limited edition brands of an ongoing line of
+flavored cigarettes called Camel Exotic Blends. Included were packs of
+cigarettes with names such as Screwdriver Slots, SnakeEyes Scotch and Blackjack
+Gin.
+Take a look at one of our modules - <a href="Brown_Williamson_Kool.html">
+Prevent Tobacco Advertising to Our Youth</a> - 
+and you decide whether or not cigarette makers are targeting our <b><font size="4">Future - the Youth of America.</font></b>
+Results of recent surveys indicate that the flavored cigarettes are especially popular among smokers under the age of 25.  
+The studies showed that 20 percent of smokers ages 17 to 19 smoked flavored cigarettes in the past 30 days while only 6 percent
+ of smokers over the age of 25 did. 
+ Each day more than 5,000 kids under 18 try their first cigarette, and more than 2,000 become established daily smokers. 
+ Anti-smoking advocates are concerned that flavored cigarettes will appeal to the under-18 demographic, which tobacco companies 
+have long targeted with marketing campaigns including images of hip-hop culture, women, and the now retired "Joe Camel."  Under
+ the 1998 Master Settlement Agreement with the states, tobacco companies were prohibited from using cartoon images.  Since that 
+time, marketing of candy-flavored cigarettes has surged. Although legislation has been introduced in Congress in an effort
+ to regulate the tobacco industry, so far no bills have survived the legislative process.  In March  2005, a new bill 
+that if enacted, will immediately prohibit candy and fruit-flavoring in cigarettes and give the Food and Drug 
+Administration (FDA) power to regulate the industry. (American Lung Association, Tobacco Policy Trend Alert, July 26, 2005).
+ </b></p>
+<p><b><font size="3" color="#808080">October 11, 2006  – Attorney General of California Bill Lockyer today announced he and the 
+Attorneys General of 38 other
+jurisdictions have entered a 
+<a href="http://caag.state.ca.us/newsalerts/release.php?id=1380&amp;">
+settlement with R.J. Reynolds Tobacco Company (RJR)</a>
+ that ends RJR’s sale in the United States of its candy, 
+fruit and alcohol-flavored cigarettes. “In marketing these products to our youth, RJR violated the agreement it made with the 
+states back in 1998 to stop targeting kids,” said Lockyer. “Hopefully, this settlement will keep RJR from breaking its word 
+again and ensure the company acts responsibly to help protect children from starting a deadly habit.” Under the settlement,
+ RJR agreed to a ban in the United States of its flavored Camel, Kool and Salem cigarettes. The agreement also imposes significant
+ marketing restrictions that make it virtually impossible for RJR to market a flavored cigarette to youth in the future.
+ The curbs apply to any cigarettes manufactured by RJR in the future that have a characterizing flavor other than tobacco 
+or menthol.</p>
+<p>The brand styles of flavored cigarettes sold by Reynolds that are banned by the Agreement are: Camel Exotic Blends:
+ Mandarin Mint, Dark Mint, Crema, Izmir Stinger, Twist, Cinnzabar, Mandalay Lime, Aegean Spice, Bayou Blast, Beach Breezer, 
+Margarita Mixer, Midnight Madness, Back Alley Blend, Kauai Kolada, Twista Lime, Winter MochaMint, Warm Winter Toffee, 
+Blackjack Gin, Screwdriver Slots and SnakeEyes Scotch; Salem Silver: Dark Currents, Fire & Ice, Deep Freeze and Cool Myst;
+ and Kool Smooth Fusions: Mintrigue, Mocha Taboo, Midnight Berry and Caribbean Chill.</font></b></p>
+<p><b>Regarding the Surgeon General's 2006 Report (released June 27, 2006) on the dangers of second-hand smoke 
+(involuntary smoking) R.J. Reynolds Tobacco said in a statement on its Web site,
+"It seems unlikely that second-hand smoke presents any significant harm to 
+otherwise healthy nonsmoking adults; and, given the extensive smoking bans 
+and restrictions that have already been enacted, nonsmokers can easily avoid 
+exposure to second-hand smoke."  </b></p><b>   
+</b><p><b>You can expect more of the same with smokeless, spitless
+tobacco pouches. We know tobacco product advertising and promotion are
+important causes of tobacco use among children. </b></p>
+<p><b>A direct mail campaign by Leo Burnett,
+ part of the Publicis Groupe, features Taboka coupons offering a $2 discount.
+WASHINGTON, D.C. -- Sen. Susan Collins, R-Maine, has introduced legislation to help crack down on illegal sales of 
+tobacco to children by banning the shipment of cigarettes and other tobacco products through the U.S. mail. The postal code 
+already makes it illegal to mail alcoholic beverages and guns. Specifically, the bill would add cigarettes and smokeless tobacco 
+to the United States Postal Service's list of restricted, nonmailable products (seacoastonliner.com, 8/7/2006). 
+</b></p>
+<p><b>Revel, the UST product
+promotion reads &#8220;Discreet Smoke-Free Tobacco Satisfaction&#8221; - reminding 
+users you can enjoy Revel
+anywhere you go - to work, to a theatre, a restaurant, the airport or wherever
+and you can enjoy tobacco privately - in public. It comes in at least three
+refreshing flavors like mint, wintergreen and cinnamon.</b></p>
+<p><b>Camel Snus tag will be - &#8220;pleasure for wherever whenever.&#8221;<br>
+<a href="#" onmouseover="doTooltip(event,23)" onmouseout="hideTip()"> 
+Mitch Zeller</a>, a health policy consultant who was director of the
+Office of Tobacco Programs at the FDA during the Clinton Administration,
+said the web site for Camel Snus "seems aimed at young adult males to 
+get them to start using products." The site says Reynolds found Snus in 
+Sweden, "home of the world's best meatballs, massage and blondes." 
+<a href="#" onmouseover="doTooltip(event,22)" onmouseout="hideTip()">
+Kylie Meiner</a>, the tobacco prevention coordinator for 
+Multnomah County where one of the two test sites for Camel Snus is located is convinced that the marketing 
+is aimed at young people. One direct mail item she received read “Camel Snus – be the 1st on your block to
+ try it” (Portland Tribune, 11/20/2006).  Cathryn Cushing, a specialist with the Oregon's Tobacco Prevention and Education
+ Program, "I see it as a young adult marketing strategy, and we have a lot of hip young adults in this city," Cushing said. 
+And "if it appeals to a 22-year-old, I think you can assume it will appeal to a 16-year-old. Because what do 16-year-olds 
+want to be? Twenty-two" (The Oregonian, 1/7/2007). Comment from Metroblogging User - Portland, OR: There are only
+two drawbacks. First, it doesn't take a genius to see what a boon snus would be to underage users. Heck, you
+could sit in class with some in your mouth, and no one would be the wiser. At least when I was in high school, 
+you had the telltale clumps of 'chaw' in the water fountains to betray the tobacco user, or at least the worn 
+white rings in the back pocket of your jeans. You could probably hide this stuff from teachers and parents 
+pretty easily. Second, although smokeless tobacco saves you from some of the risk of heart disease and lung 
+cancer, plenty of smokeless tobacco users out there have developed cancer of the mouth or throat, and have had
+large chunks of their jaws and tongues removed as a result. But that's a hard image to sell to sixteen-year-olds,
+who are pretty sure that they're immortal ("You Snus, You Lose" posted by PAgent at 1:50pm on January 8, 2007). 
+</b></p><b> 
+</b><p><b>Swedish Match has attractive young men and women offering customers in bars and
+smoke shops a free taste of tobacco. These promoters hope that smokers who
+donâ€™t want to forced outside to smoke to puff will try snuff (that comes in
+various flavors) instead. One person who was approached at a
+ New York City bar was offered a free tin even
+after telling the model he had quit smoking weeks before.
+Swedish Match and UST have Internet web sites
+where these products can be ordered and for a limited time shipping is free.
+USTâ€™s has even had a &#8220;Free Gear for Lids&#8221; campaign in which tobacco tin lids
+were exchanged for free outdoor and recreational gear. One snus user has
+commented that the packet placed in my mouth was so small as to be unnoticeable
+to the person sitting next to me in the lecture hall. </b></p>
+<b><img src="snus_its_coming.jpg" length="150" align="left" width="150"> 
+</b><p><b>It seems these players are gearing up to be in the smokeless tobacco business a long time. Tobacco smoking 
+more and more, as sales continue to decline, is looked upon as anti-social and unacceptable behavior. Tobacco
+ companies openly acknowledge that smoke-free laws reduce smoking and consequently cigarette sales.</b></p>
+<p><b>Mark Smith of R.J. Reynolds, "We're meeting consumer demand. Smoking bans are making it more difficult for adult 
+smokers to enjoy a tobacco product." Reynolds American Inc. on May 31, 2006 completed its $3.5 billion acquisition
+ of a holding company that owns Conwood (traces its roots back to 1782 the founding of the Garrett Snuff Company), 
+the nation's second largest manufacturer of smokeless tobacco products. Conwood is UST's largest competition, its share of
+the U.S. moist snuff market is approximately 13%. UST is the largest manufacturer of moist snuff product
+in the U.S. and controls 75-80% of the moist snuff markets (Skoal, Copenhagen). Two other competitors, Swisher International 
+(Silver Creek, Redwood and Kayak moist snuff) having a market share of 4% and Swedish Match with a market share of 6% 
+(Data from July 2002)."Snus and Conwood are separate initiatives but they both demonstrate how committed we are to the 
+non-smoke category," Chief Financial Officer Diane Neal said on a conference call with analysts.</p>
+<blockquote>Conwood is the only company to compete in all five segements of the U.S. smokeless tobacco industry, manufacturing moist and
+dry snuff, and loose leaf, plug and twist chewing tobacco. Conwood holds the No. 1 or No. 2 position in every segment of the
+smokeless tobacco market. Moist snuff accounts for more than 70% of Conwood Sales, led by both its premium priced brand 
+Kodiak brand and its rapidly growing value-priced Grizzly brand. Conwood will operate as a subsidiary of Reynolds American
+(Reynolds American News, April 2006). The purchase of Conwood gives Reynolds a quarter of the U.S. smokeless market
+(The Advocate, 9/19/2006).</blockquote>
+<p> Susan Ivey RAI chairman, president and CEO points out that Conwood has an impressive performance record. Itâ€™s the 
+nationâ€™s second largest manufacturer of moist snuff. It has No. 1 or No. 2 position in every smokeless category. 
+Conwood has been the growth leader in the moist snuff category, where it has built a 23% share of the market. The 
+moist snuff category, itself has been growing at an annual rate of 4 to 5% for the past five years.&#8221; Ivey said. 
+Ivey goes on to say, this purchase, &#8220;provides us with an immediate platform that would have taken us years to build,&#8221; 
+Ivey said. This purchase &#8220;gives us a strong presence in virtually every domestic tobacco category.&#8221;</b></p>
+<p><b>Reynolds American Inc. said Wednesday 2/28/2007 that Conwood Co. LLC, its smokeless-tobacco company,
+ will expand its operations in Winston-Salem and could add up to 100 jobs over the long term. The company
+ said that Conwood will build a $30 million, 88,000-square-foot plant. Reynolds was mum about what products
+ would be made there, however. Payne, a Reynolds spokesperson, said she would not speculate on whether Conwood
+ planned to make any new brands in the plant. The smokeless-tobacco market "is an extremely competitive 
+category," she said. (by M. Paul Jackson, Winston-Salem Journal, 3/1/2007) </b></p>
+<p><b>For Philip Morris - Bonnie Herzog the tobacco analyst for Citigroup indicates in her report, &#8220;This is just the 
+beginning for Philip Morris and depending on the success of this new product &#8230;we expect the company to organically
+ (organic growth - typically refers to growth that is not fueled by mergers and acquisitions) launch a full range of 
+other smokeless tobacco products.&#8221;</b></p><b>  
+</b><p><b><u>Targeting current cigarette smokers looking for an alternative to tobacco 
+ smoking.</u> According to the Center for Disease Control and Prevention 44.5 million US adults were current smokers in 2004. 
+Of these about 70% (33.3 million) want to quit smoking and free themselves of all tobacco products. Most of remaining smokers 
+are older hardline smokers and refuse to quit. Will this latter group of around 11 million smokers be the only target group that
+ the tobacco companies try to convince to go smokeless??</b></p><b>  
+</b><p><b>Do you think they have plans to grow the business by broading the target audience like through promotions and 
+advertisements meant for smokers but also to catch the interest of others?? Ms. Judith Wilkenfeld of the Campaign for
+ Tobacco-Free Kids has questioned the logic of promising to market only to adults. She said that kids
+ increasingly aspire to the symbols of adult life -- not Barney (ASH: Tobacco Companies Proposes Weak 
+Advertising Curbs, 9/11/2001.)In Sweden (2004) it has been found that the use of snuff decreases with age and was the highest
+in the age group 18-29 years (Moist snuff use increases the risk of cancer and death 
+from cardiovascular disease, P. Nordgren, Swedish National Institutes of Public Health). In Swedish Match's homeland (Sweden),
+the industry portrays snus as an energy boosting stimulant which is becoming increasingly popular among the most
+discerning nicotine addict. It has been pointed out that snus use among Norway's 16-to-24-year-old men more than trebled between
+2002 and 2003, while smoking slipped back (Snuff firms sniff a profit in smoking bans, Jorn Madslien, BBC Newsline Online Business
+Reporter, Oslo, Norway, 9/6/2004).   
+</b></p>
+<p><b>The US Federal Trade Commission's annual report on cigarette sales and advertising showed that the major
+cigarette manufacturers spent $15.15 billion on advertising and promotional expenditures in 2003, an increase of
+$2.68 billion (26.5%) from 2002 and the most ever reported to the commission. At the same time, the total number of 
+cigarettes sold or given away by those manufacturers decreased by 19.8 billion cigarettes from 2002 to 2003. </b></p><b>   
+</b><h3><b><a name="Programs"><u>Programs to Eliminate Tobacco are Working</u></a></b></h3>
+<b><a href="Share__the__Blame.html"><font color="#ff0000" size="3">Letâ€™s not have another set back
+ for the tobacco control
+(elimination) movement.</font></a> Programs to eliminate tobacco are working - tobacco use
+is becoming a socially unacceptable practice. Aggressive anti-tobacco programs,
+enacting comprehensive smoke-free laws, 
+<a href="#" onmouseover="doTooltip(event,10)" onmouseout="hideTip()">increased cost of cigarettes</a>
+resulting from the penalty from the MSA settlement and 
+<a href="Low_no_taxed_cigarettes.html">increased taxes </a> (some 41 states have passed cigarette-tax increases in the past 
+five years - Dan Smith, University of Florida, 10/11/2006)has lead to a
+decrease in the number of tobacco smokers putting another nail in the coffin.
+With the Surgeon General's comprehensive scientific report
+(The Health Consequences of Involuntary
+Exposure to Tobacco Smoke, June 2006) on the dangers of
+<a href="#" onmouseover="doTooltip(event,11)" onmouseout="hideTip()">secondhand-smoke</a>
+ (involuntary smoking) will likely increase the enactment of more legislation on
+smoke-free work places. 
+<a href="http://wnd.com/news/article.asp?ARTICLE_ID=52559">
+Omaha's tough new anti-smoking ordinance banning  (October 2, 2006)</a> the practice in nearly 
+all public places comes with an even tougher enforcement policy. Elected leaders and police department are urging residents
+ who see violations to call the 9-1-1 emergency system for an immediate response. Penalties are $100 for the first offense, 
+$200 for the second and $500 for the third and subsequent infractions. Tobacco store (Tobacconists of Raleigh)
+is closing in Raleigh, North Carolina after 15 years in business cites declining sales because of the health risks if smoking
+(The News & Observer, 2/10/2007). 
+</p>
+<p>Also, Pfizerâ€™s anti-smoking pill Champix
+has been approved in the United States and should be available soon to help
+ smokers more easily give up tobacco smoking. 
+In addition, there's a new vaccine called NicVax being tested that will prevent and treat
+nicotine addiction to help people quit smoking.</p> 
+</b><center><b><br>
+<img src="secondhand_smoke.gif" length="200" width="250"><br>
+"Involuntary Smoking"<br><i>Montana State University-Bozeman</i> 
+</b></center><b> <br>
+Worried about the health effects of
+ secondhand smoke and sick of
+cleaning up discarded butts, jurisdictions are even banning smoking on beaches
+and in parks. Hotels, even in the tobacco state of North Carolina are snuffing out smoking in
+all rooms, restaurants, bars and public areas. Throughout the country including Raleigh, NC 
+apartment renters  are being told they or their guests cannot smoke tobacco.  
+<p>Suffolk County, New York raised the legal age to purchase tobacco from 18 to 19 on May 16, 2005.
+It's the 1st county in New York State to raise the age to purchase tobacco.) Under the new law 
+any store caught selling tobacco to someone younger than 19 will be subject to a $300 fine 
+for a 1st violation and up to $1500 in fines for subsequent violations (behavorialhealth.typepad.com).  
+Possibly the proper authorities should extent the age to purchase tobacco products until the age of 25.
+Tobacco companies put out a maximum effort to convince young adults, especially college students,
+between the ages of 18 and 24 that it's smart thing to do. Where's Philip Morris's anti-tobacco program
+for this group of youngsters. Thursday, November 16, 2006 — Tobacco Reporter: Belmont, California is set
+ to make history by becoming 
+the first US city to ban smoking on its streets and almost everywhere else, according to a report by 
+Dana Yates in the San Mateo Daily Journal, California. The Belmont City Council voted unanimously on
+ Tuesday night (11/14/2006)
+to pursue a strict law that would prohibit smoking anywhere in the city except for single-family 
+detached residences. Smoking on the street, in a park or even in a private car would become illegal.
+The wording of the law still needs to be drafted and it will probably come back to the council either
+ in December or early next year.
+Bangor, Maine - this week (January 15-19, 2007)
+<a href="http://bangordailynews.com/news/t/news.aspx?articleid=145230&amp;zoneid=500">
+a new ordinance went into effect</a> that allows Bangor police to impose a $50 fine on 
+anyone found smoking a cigar, cigarette or other material in a vehicle (on any public road withing city limits)
+if anyone under 18 is in the vehicle. The 
+<a href="http://abclocal.go.com/wpvi/story?section=healthcheck&amp;id=4938372">State of Connecticut</a>
+ is now starting to consider a similar ordinance for the entire state. Governor Jim Doyle in his State of State
+speech (1/30/2007) wishlist included a broad effort to stamp out cigarette smoking in Wisconsin (Wisconsin
+State Journal 2/1/2007). </p> 
+<p>Companies concerned about paying high health insurance premiums  are hesitant to employ
+people that smoke or use other tobacco products. A healthcare benefits company fired four 
+of its employees for refusing to take a test that determines whether they smoke cigarettes. 
+Weyco Inc., a health benefits administrator based in Okemos, MI adopted this policy January 1, 2005 
+that allows employees to be fired if they smoke even if the smoking happens after business hours or at home.
+The company cites concerns over rising healthcare costs for those that smoke. "Wyco Inc. is a non-smoking 
+company that strongly supports its employees in living healthy lifestyles."(TheBostonChannel.com, 1/25/2005).
+Effective January 1, 2002, as a part of our public health policy, and because of the known effects tobacco use 
+has on our community, Tacoma-Pierce County Health Department does not hire applicants who use tobacco.
+Smokers at Scott's Miracle-Gro Co. won't even be able to do that much longer. In October 2006, the Marysville, OH 
+based company will begin randomly testing employees and giving pink slips to those who test positive for nicotine.
+The company announced the ultimatum in November, saying it was giving employees a year to quit, and offered to help
+with smoking-cessation programs. Scott's officials say it's part of a larger effort to help their employees become
+healthier (Clock ticking down for smokers at Scott's Miracle-Grow, Susan Deutschle, Business First of Columbus, 
+April 14, 2006).
+<p>A Zogby survey of likely voters has found that
+ <a href="http://stopthedrugwar.org/chronicle/459/nearly_half_of_americans_support_banning_cigarettes">
+45% would support making cigarettes illegal within the next 
+five to 10 years.</a> Currently, cigarettes are not illegal anywhere in the United States (except some jails
+ and prisons, where they are considered contraband), although moves to restrict smoking and tax tobacco
+ products are winning broad acceptance (from Drug War Chronicle, Issue #459, 10/27/06).</p>
+<p>In Ireland smoking is forbidden in enclosed places of work. This includes office blocks, various buildings,
+public houses/bars, restaurants and company vehicles (cars and vans). The Irish Government's ban on smoking 
+in the workplace went into effect March 29, 2004 (Citizens Information Online, Information about Public
+Service in Ireland). Ireland was the first country in the world to introduce a full smoking ban.</p> 
+<p><a href="#" onmouseover="doTooltip(event,18)" onmouseout="hideTip()">The Framework Convention on 
+Tobacco Control</a><br>    
+<a href="FCTCgen.html">(FCTC)</a>, adopted in 2003 has carried the force of international law since 
+it took affect on February 28, 2005. Already, it has stimulated increases in tobacco excise taxes, the implementation of
+ marketing bans, and the introduction of smoke-free public places in many countries. As we know, these actions have been well
+ documented as effective. Click For further information on the FCTC </p> 
+<p> We now even find that the use of tobacco is
+prohibited by Jewish Law and the Christian faith frowns on the abuse of the
+body through the use of tobacco in any form.</b></p>
+<p><b>With the limitations placed on smokers they are quitting. Carolyn Littlefield,
+a 44-year-old Florida resident in  town for the summer horse racing season, said
+ New York's rules on banning smoking helped her quit two years ago. "I felt like I 
+had leprosy. After a while you end up outside smoking by yourself. So many people
+don't smoke now," Littlefied said while enjoying a drink at a popular downtown restaurant 
+and bar.</b></p>
+<p>Smoking cessation accounts for about 40% of the decrease in cancer deaths seen among U.S. men since 1991, according 
+to a report by American Cancer Society researchers. From 1991 to 2003, reductions in tobacco smoking have prevented at
+least 146,000 cancer deaths among men. The decrease in lung cancer and overall cancer mortality among men began 
+approximately 30 years after the downturn in the smoking rate of U.S. men, the investigators pointed out.
+<a href="http://tc.bmjjournals.com/cgi/content/full/15/5/345">Thun, MJ, Jemal, A
+ "How much of the decrease in cancer death rates in the United States is attributable to reductions 
+in smoking?" Tob Control 2006; Oct; 15(5): 345-347.</a></p> 
+<p><b><font size="4">Regarding litter</font> -   in Sweden where snus<img src="snus_used_trays.jpg" length="80" align="right" width="80"> 
+ originated grimy used snus packets litter the otherwise clean streets and 
+subway stations of Stockholm. Besides the effect on the environment 
+ these used discarded packets after being in the users mouth for at 
+least 15 minutes will enhance the transmission of contagious diseases such as tuberculosis (we're not 
+talking about health conscious tobacco users here). Also, the more the snus user moves the packet around in their mouth
+the more juices--some possibly toxic--will be created.  
+</b></p><b>  
+</b><p><b><img src="tobacco_companies_more_money.gif">
+Big tobacco companies are not going to give up. Reynolds American plans to spend
+$40-million to defeat proposed smoking bans in Arizona and Ohio as well as efforts to raise
+state cigarette taxes in California (is the single largest domestic market, accounting for about 6% of cigarette sales) 
+and Missouri. On the ballot in November,2006 the measure
+in California calls for a 300% increase in the state tobacco tax to $3.47 a pack from
+the current 87 cents. (By the way - a similar increase would apply to cigars and other 
+tobacco products - snus.)
+Philip Morris USA has invested about (so far) 
+$1.4-million in two communities opposed to the California measure to boost state taxes on cigarettes. 
+Missouri's tax increase will go from 17 cents a pack (second lowest in the nation, South Carolina
+has the lowest at 7 cents tax on a pack) in November,2006 (2006) to 97 cents and 
+raise taxes on other tobacco products by 20%. October 11, 2006 - Peggy Roberts, a spokeswoman
+for Philip Morris, said the company has begun consumer and vendor campaigns to defeat a $1-a-pack tax
+in South Dakota and the 80-cent-a-pack increase in Arizona. Also tobacco companies like Reynolds try to confuse voters. 
+In Ohio, voters are considering two smoking-related measures. SmokeFreeOhio would change state statutes to ban
+smoking in most buildings other than private homes and a certain percentage of hotel rooms. This one is supported
+health charities. A rival proposal, backed by Reynolds and a group called Smoke Less Ohio also purports to restrict 
+smoking, through a constitutional amendment. But it would exempt restaurants, bars, bowling alleys and similar
+establishments, unwinding more restrictive existing municipal bans. Tracy Sabetta, of SmokeFreeOhio, admitted her group
+may have been politically outmaneuvered when it decided to pursue its measure as a statutory change in state law 
+rather than a constitutional amendement. "We could get 90% of the vote and theirs (Reynolds measure) could still 
+trump ours," she said(The Wall Street Journal, Christopher Cooper).  
+</b></p>
+<p>CLOSE VOTE (Tuesday, November 7, 2006): California Proposition 86 lost, received 48% of the vote, making it the 
+closest statewide contest of the night, despite over $60 million spent by tobacco companies against
+ the measure. A tobacco tax measure was also defeated in Missouri, but others passed in Arizona and South Dakota. 
+Ohio, Arizona and Nevada will become the 15th, 16th and 17th states to implement comphrehensive smoke-free legislation.
+ The other 14 states (as of 11/9/2006) are: California, Colorado, Connecticut, Delaware, Hawaii (effective Nov. 16),
+ Maine, Massachusetts, Montana, New Jersey, New York, Rhode Island, Utah, Vermont and Washington (the Montana and Utah laws extend 
+to bars in 2009, while the Washington DC law does so on January 1, 2007) and Puerto Rico. Two other states – Florida and Idaho – 
+have smoke-free laws that
+ exempt only stand-alone bars. Hundreds of cities and counties have also passed strong smoke-free laws. 
+R.J. Reynolds, Philip Morris, and other tobacco firms reportedly spent $100 million fighting tobacco 
+related ballot issues, with varying degrees of success.
+<a href="Tobacco_ballot_inititives_Novmeber_2006.html">
+Election Results: Tobacco Ballot Initiatives, November 7, 2006</a>
+ </p>  
+</b><p><b>Furthermore, it looks like the tobacco industry has been increasing the levels of nicotine in their cigarettes    
+over the last six years making it even more difficult for smokers to quit.  According to the Massachusetts
+Department of Public Health the overall increase has been about 10% during 1998-2004.(Medical News Today, August 30, 2006)</b></p>
+<p><b>Kenneth Warner, the Dean of the School of Public Health at
+University of Michigan - &#8220;We have excellent research that shows that work site
+prohibited smoking reduces smoking rates.&#8221; A product
+that subverted that goal would hardly be a gain for public
+health. </b></p>
+<p><b><font size="4">Remember the rule of thumb that seems to always hang-true:
+that if a tobacco company comes out in favor of something - this signals that
+there must be something wrong. The only safe way to break the nicotine
+dependency is to quit using any form of tobacco.</font> </b></p>
+<b><br>
+<br>
+<br>
+</b><h3><b><a name="Playing"><u>Playing Right Into the Hands of Big Tobacco</u></a></b></h3>
+<p><b>Tobacco companies lack creditability so not many people will believe them when they promote smokeless tobacco as a safer
+ alternative than smoking.  (will have branch to highlights) (The level of trust with the tobacco industry is virtually nil,
+ and if this is the industry we're going to rely upon to come up with safer products, we are going to be very, very cautious, 
+very cautious," said Maureen Connelly of the Harvard School of Public Health.)</b></p>
+<p><b>So these companies are prodding public health officials to come forward and support claims about how safe smokeless tobacco is 
+when compared to tobacco smoking. If this wouldnâ€™t happen tobacco companies before they could advertise smokeless as a harm 
+reduction product would have to provide proof to the Federal Trade Commission.</b></p>
+<p><b>Certain public health professionals have played right into their
+hands and have even been outspoken on how safe smokeless tobacco is
+compared to tobacco smoking. One fellow described as tobacco-policy
+expert David Sweanor, who teaches law and
+medicine at the University of Ottawa, puts it, "It's the smoke,
+stupid." But even Philip Morrisâ€™s (USA) Taboka Fact Sheet points out
+that smokeless tobacco products are addictive and cause serious
+disease. The U.S. Surgeon General and other public health authorities
+have determined that smokeless tobacco products: cause serious diseases
+such as cancer, cardiovascular disease and other diseases of the mouth,
+gums and teeth; may increase the risk of serious diseases when used in
+combination with smoking; cause adverse reproductive effects and should
+not be used during pregnancy; and are not a safe alternative to
+smoking. Philip Morris USA points out that smokeless tobacco product
+users and potential smokeless tobacco product users should rely on
+these messages in making all tobacco-use related decisions.</b></p>
+<p><b>Public health researchers have come up with various percentages on just how safe going smokeless is compared to smoking. 
+Some say 99% safer others at least 90%  reduction in relative risk using 
+<a href="nitrosamines.html">low-nitrosamine</a> smokeless tobacco use. (branch 
+ regarding
+<a href="nitrosamines.html">nitrosamines</a> and pasteurization of tobacco). </b></p>
+<p><b><a href="#" onmouseover="doTooltip(event,24)" onmouseout="hideTip()">Dr. Jonathan Foulds</a>
+, Ph.D., MAppSci., MA - Director of the Tobacco Dependence Program at the University of Medicine and Dentistry 
+of New Jersey, has stated:  "In comparison with smoking, experts perceive at least a 90 % reduction in the relative risk" 
+of 
+<a href="nitrosamines.html">low-nitrosamine</a> smokeless-tobacco use. 
+This makes sense, since it is the 4,000 ingredients in the smoke that make a 
+cigarette so lethal.&#8221;  Well - smokeless tobacco even without burning has over 2,000 ingredients. Dr.Foulds has stated that
+smoking a cigarette, though, was not the same as using a smokeless tobacco pouch. The way in which nicotine is delivered makes 
+all the difference, he says. "You can't beat a cigarette for nicotine delivery. It's much faster and in a more concentrated
+form," Foulds said. "Cigarettes are like a Ferrari, and the [smokeless] pouch is like a secondhand Ford." For tobacco smoking it
+takes about 10 seconds for nicotine to reach the brain but for smokeless tobacco it may take over a minute. 
+<font size="4">Will this difference cause the smokeless tobacco user to switch back to tobacco smoking when possible.</font>  Maybe this delay in
+reaching active sites within the brain will not be sufficient to provide that instead reward for the nicotine addict. The smoker
+that is now using smokeless tobacco may switch back to tobacco smoking but now smoking even more cigarettes per day than before.
+Nicotine absorption, frequency and speed seem to have a direct relationship with how strong dependence and tolerance if any
+might be created. 
+ </b></p>
+<p><b>Dr. Scott Tomar (DMD, MPH, Dr.PH, University of Florida, College of Dentistry) has found that many smokers who take up the 
+use of snuff in an effort to quit instead end up asking for both products. In addition, he found that nonsmokers who use snuff 
+are more likely than those who donâ€™t to eventually begin smoking. &#8220;Men were more than 2.5 times as likely to have switched from
+ snuff to cigarettes than to have switched from cigarettes to snuff,&#8221; said Dr. Tomar.</b></p>
+<p><b>What if smokers switch to smokeless tobacco only to find out itâ€™s not a satisfactory alternative. Smokeless tobacco usually has
+ a higher concentration of nicotine and most likely higher pH so it can be more readily absorbed from the oral mucosa. However 
+- it takes around a minute for sufficient levels to active sites within the brain compared to nicotine from inhaled smoke being 
+absorbed in the lungs taking 10 seconds. </b></p>
+<p><b>A web site has even been created by a two public health professionals entitled TobaccoHarmReduction.org that attempts to
+ convince people that smokeless is the way to go using either moist snuff and even chewing tobacco. Let's look at two of 
+the major heading on the first page of the site. </b></p>
+<hr align="center" width="60%" noshade>
+<center>
+<font color="808000"><h3>Cigarettes Kill, but it's not the nicotine or the tobacco. It's the smoke!</h3>
+<h4>and<h4>
+   <h3>Reduce the harm from Nicotine use: Go smokeless.</h3> <br>
+Using modern smokeless tobacco products can reduce the risks of tobacco use by about 99% compared to smoking.
+These products include moist snuff (which is sometimes called by its Swedish name,<i>snus</i>) and chewing tobacco. 
+And you do not have to chew and spit - many modern products require no spitting and are easy to use as a breath mint.</font>
+</center>
+<hr align="center" width="60%" noshade>
+<p><b>These professionals - Dr. Carl V. Phillips at the University of Alberta and
+<a href="#" onmouseover="doTooltip(event,21)" onmouseout="hideTip()">
+ Dr. Brad Rodu</a> at the University of Louisville - James Graham Brown Cancer Center,   
+receive funding from United States Smokeless Tobacco (UST) and it
+ seems their results fit perfectly in line with the outcome 
+UST wants to see. Dr. Rodu, a dentist with training in oral pathology, is a professor 
+of medicine and the first holder of the endowed chair in Tobacco Harm Reduction Research  
+The endowed chair and accompanying research fund were created by tobacco companies 
+U.S. Smokeless Tobacco Co. and Swedish Match AB, who committed nearly $3.4 million. <br>
+<font size="4" color="#669933"> 
+It has been pointed out that much of the research on the relative health impact of 
+smokeless tobacco has been funded by the tobacco industry (Smokeless Tobacco Poses
+Challenge for Stop-Smoking Advocates, Join Together, 9/20/2006).</font>  
+</b></p>
+<p><b>Tobacco companies have warned public health professionals if they
+donâ€™t support the smokeless tobacco alternative theyâ€™ll be at fault for
+the suffering from chronic sickness and death of tobacco smokers.. Even
+the Mayo Clinic, one of the most prestigious and affluent medical
+charitable organizations in the US has been accused of misinformation
+about smokeless tobacco.
+(&#8220;The Mayo Clinic Spreads Misinformation About Smokeless Tobacco by
+John K. Carlisle, CRC Highlight from Capital Research Center.)
+</b></p>
+<b> 
+</b><h3><b><a name="Harm"><u>Harm Reduction - The Pharmacology of Moist Snuff - SNUS</u></a></b></h3>
+<img src="Cardiovascular_Disease.jpg" width="100" height="100">
+<h4><b><a name="Cardiovascular"><u>Cardiovascular Disease</u></a></b></h4>
+<p><b>We were shocked to learn that <a href="#" onmouseover="doTooltip(event,1)" onmouseout="hideTip()">
+Dr. Neal Benowitz</a>,
+ a clinical
+pharmacologist (Professor of Medicine at UCSF and director of its
+cancer centerâ€™s Tobacco Control Program well respected clinical
+pharmacologist considered the expert in tobacco control told a
+Los Angeles Times reporter Valerie Reitman for a 2004 article, &#8220;If
+someone canâ€™t quit smoking, there is no question that smokeless
+is much safer. It doesnâ€™t cause heart or lung disease, and if it does
+cause cancer, it does slow at a much lower rate.&#8221; 
+<a href="#" onmouseover="doTooltip(event,0)" onmouseout="hideTip()">Dr. Gary Giovino</a>,
+Director of the Tobacco Control Program at Roswell Park happened to be
+at the same interview and chimed in by saying that he totally agrees with what Dr.
+Benowitz has stated.</b></p><b> 
+</b><p><b>Smokeless tobacco will reduce the incidence of respiratory
+disease including lung cancer and the effects of secondhand smoke. But
+regarding heart disease the use of smokeless tobacco is definitely a
+major factor. Just look at the acute effects of nicotine.
+Immediate after exposure to nicotine, there is a &#8220;rush&#8221; caused in part
+by the drugâ€™s stimulation of the adrenal glands and resulting in a
+discharge of epinephrine (adrenaline). The result of epinephrine
+release causes a sudden release of glucose, as well as an increase in
+blood pressure, respiration and heart rate. Nicotine also suppresses
+insulin output from the pancreas. (In fact, side effects, such as
+nausea and blood vessel constriction, have plagued attempts to test
+nicotine on patients with Alzheimer's disease, Parkinson's disease, and
+other maladies in which, studies indicate, nicotine could alleviate
+some symptoms.) These responses to nicotine uptake occurring most
+likely several times a day most have an overall negative effect on a
+smokeless tobacco users cardiovascular system. In a randomized,
+double-blind, placebo-controlled, crossover designed study was carried
+out with healthy volunteers to find the hemodynamic and autonomic
+effects of smokeless tobacco. It was found that smokeless tobacco is a
+powerful autonomic and hemodynamic stimulus increasing blood pressure
+on average by 10mmHg, heart rate 16 beats/minute and adrenaline blood
+level by 50%. It was concluded snuff tobacco has a
+powerful stimulant effect but that it also dampens the body's normal
+protective responses to blood pressure elevation. (Wolk, R et al. , J
+Am Coll Cardiol 45(6 - March 15) : 910-4, 2005)</b></p>
+<p><b>In a recent editorial Dr. Meir J. Stampfer  (Chair, Department of Epidemiology, Harvard School of Public Health) wrote,
+ &#8220;The overwhelming conclusion from these mass of data is that tobacco exposure causes a large proportion of myocardial infarcts 
+in men and women around the world.&#8221; When asked if the use of moist snuff (snus) should be included in these tobacco exposures
+ he wrote: Yes, strong evidence shows that smokeless tobacco including snuff and chewing tobacco causes cancer and heart disease
+ (M J Stampfer, M.D., Dr.PH).  </b></p>
+<p><b>Bolinder et al. (1992) showed that middle aged snus users had a significantly higher risk of mild hypertension (diastolic blood 
+pressure &gt;90 mmHg or systolic blood pressure &gt;160 mmHg) than middle aged non-tobacco users. In a prospective cohort study
+ comprising a large number of construction workers Bolinder et al. (1994) found an association between snus use and increased
+ risk of death from all cardiovascular diseases for the age group 35-45 years but not for the age group 55-65 years. 
+A study by Bolinder et al. showed a 40% increased risk of cardiovascular death among snus users. This study was a prospective
+ cohort study of 235,036 industry employees, who were followed for cause-specific mortality during a 12-year period. The risk
+ for cardiovascular death was even more pronounced among men aged 35 to 54 years old. This risk for cardiovascular death
+ increased by 110% for snus users compared to non-tobacco users. (Bolinder et al. Am J Public Health 84: 339-404, 1994). There 
+are few small case-controlled studies that have failed to show a significant cardiovascular risk among snus user.
+ (Huhtasaari et al., J Am Coll Cardiology 34:1784-1790, 1999.) 
+A Swedish study finds that people who use snuff are more likely to be overweight and to have high blood pressure and high
+ cholesterol. Many people have turned to Swedish moist snuff or snus as a substitute for cigarettes. Researchers tracked 
+16,500 people in Västerbotten in northern Sweden and found that heavy snuff users were four times as likely to suffer from 
+"metabolic syndrome," a cluster of symptoms that contribute to heart disease. Margareta Norberg, one of the scientists, 
+said snuff is still better than cigarettes -- but that doesn't mean people should use snus to give up smoking. 
+ (United Press International, August 25, 2006)  In another study, healthy middle-aged snus users underwent ultrasound
+ assessment of endothelial-dependent flow-mediated dilatation (FMD) of the brachial artery. It was found that oral moist
+ snuff impaired FMD (endothelial dysfunction predicts cardiovascular morbidity) of the brachial artery.
+ (Rohani M and S Agewall, J Intern Med 255:379-383, 2004).  </b></p>
+<p>According to a recent study in 
+<a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?db=pubmed&amp;cmd=Retrieve&amp;dopt=AbstractPlus&amp;list_uids=16920470&amp;itool=pubmed_AbstractPlus">
+Lancet 2006 Aug 19;368(9536):621-2</a> covering a total of 27,000 people in 52 countries found that all forms of tobacco
+use and consumption heightened the risk of heart attack by up to 3 times. (KK Teo et al. An Interheart Study) </p>
+<img src="oral_lesions.jpg" width="100" height="100">
+<h4><b><a name="Oral"><u>Oral Lesions</u></a></b></h4>
+<br>
+<p><b>First, just using common sense if you place moist sniff packet in your mouth in just about the same 
+location several times a day for a periods of 30 minutes or more  the mucosa surface  in  the mouth will become 
+irritated and eventually inflamed.  There is more nicotine in one smokeless tobacco pouch then in a single cigarette 
+but maximum levels of nicotine were similar.  If the user would move the packet around in other parts of their mouth -
+even with less salt and moisture compared to chewing tobacco heâ€™d release more saliva and would have to swallow the
+ poisonous mix or spit it out  - so the tobacco would no longer be spitless.   Take a look at a couple typical snuff
+ users and an up-close look at an oral lesion.</b></p>
+<p><b>In 1986, the U.S. Surgeon General concluded that the use of spit tobacco is not a safe substitute for smoking cigarettes 
+or cigars, as these products can cause various cancers and noncancerous oral conditions, and can lead to nicotine addition.</b></p>
+<p><b> Some of these conditions are listed below.<br> 
+	<a href="#" onmouseover="doTooltip(event,8)" onmouseout="hideTip()">Cancer of the mouth</a> and pharynx<br>
+	<a href="#" onmouseover="doTooltip(event,7)" onmouseout="hideTip()">Leukoplakia</a> (white sores in the mouth that can lead to cancer)<br>
+	<a href="#" onmouseover="doTooltip(event,6)" onmouseout="hideTip()">Gum recession</a>, or peeling back of gums <br>
+	<a href="#" onmouseover="doTooltip(event,5)" onmouseout="hideTip()">Bone loss around the teeth</a><br>
+	<a href="#" onmouseover="doTooltip(event,4)" onmouseout="hideTip()">Abrasion of teeth</a><br>
+        <a href="#" onmouseover="doTooltip(event,3)" onmouseout="hideTip()">Bad Breath</a><br> 
+        <a href="#" onmouseover="doTooltip(event,25)" onmouseout="hideTip()">This could be you..</a><br></b> 
+<p><b>Proponents of using another tobacco product for harm reduction would say things are different now because we are using 
+pasteurized tobacco with lower levels of 
+<a href="nitrosamines.html">nitrosamines</a>.</b></p>
+<p><b>CDCâ€™s Smokeless Tobacco Fact Sheet (November 2005) provides the following information. Smokeless tobacco contains 28
+ cancer-causing agents (carcinogens). It is a known cause of human cancer, as it increases the risk of developing 
+<a href="#" onmouseover="doTooltip(event,16)" onmouseout="hideTip()">cancer of the oral cavity.</a>   Oral health problems strongly associated with smokeless tobacco use are leukoplakia (a lesion of the
+ soft tissue that consists of a white patch or plaque that cannot be scraped off) and recession of the gums. </b></p><b> 
+</b><p><b>The most common adverse effect of snuff is a lesion in the oral cavity. Even Swedish Match - the largest supplier of snus 
+in the world provides the following information entitled important research  regarding oral lesions on Swedish snus
+Important research results on Swedish snus:<br>
+<blockquote>It is unclear whether use of Swedish snus causes dental caries. <br>
+&#8226;	Use of Swedish snus causes reversible inflammation in the gingival mucosa (gingivitis) in some individuals at the site<br>
+ where the pinch is placed. There seems not to be any association between the use of snus and periodontitis (loosened teeth). 
+&#8226;	Gingival recessions are more common in users of loose snus than in users of portion-packed snus and are irreversible. <br>
+&#8226;	Snus use causes benign changes in the oral mucosa (snus dipperâ€™s lesions). These changes arise at the site where the 
+pinch is placed. <br>
+&#8226;	There is an association between the degree of oral mucosal lesion and consumption factors such as daily duration,
+daily consumption and number of years. <br>
+&#8226;	When snus users reduce their daily consumption or when users of loose snus switch to portion-packed snus the degree
+ of oral mucosal lesions decrease both from a clinical and a histological perspective. <br>
+&#8226;	The degree of oral mucosal lesion increases both with increasing pH and nicotine content. <br> 
+&#8226;	Snus lesions are reversible, i.e. the oral mucosa reverses to normal condition after cessation of snus use. <br>
+&#8226;	Users of portion-packed snus have less pronounced snus lesions than users of loose snus. <br> 
+&#8226;	Epidemiological data do not indicate any association between snus use and serious dysplastic oral mucosal changes or
+pre-carcinogenic effects in the oral cavity. These results agree well with the fact that no tumours or dysplasia have been
+ found in the oral cavity among 500 snus users who have been examined annually for several years.<br> 
+For more information from Swedish Match - http://www.gothia-tek.com/templates/start.aspx?page_id=74  </blockquote> </b></p>
+<p><b>The carcinogenicity of snuff has been evaluated twice by the International Agency for Research on Cancer, 1985 and 2005. 
+On both occasions it was concluded that oral use of snuff is carcinogenic. More reports suggesting that snus causes leukoplakia
+ and irreversible gingival recessions. (Axell T, Oral Oncol 29B: 299-302, 1993)</b></p>
+<p>According to the American Cancer Society, more than 30,000 people each  year across the nation will be diagnosed 
+with oral cancer.  More than 7,000 will die. One person every hour dies of oral cancer. </p>   
+<img src="pancreatic_cancer_source_book.gif">
+<h4><b><a name="Pancreatic"><u>Pancreatic Cancer</u></a></b></h4>
+<br>
+<p>  <a href="#" onmouseover="doTooltip(event,14)" onmouseout="hideTip()">Pancreatic cancer</a>
+is a very lethal disease. Approximately 30,000 people 
+(about equal number men and women) are diagnosed annually  in the U.S. while about the same number
+die annually from the disease.. Due to the
+difficulty in diagnosis, the intrinsic aggressive nature of the cancer and sparse systemic treatment options
+available only approximately 4% of patients disgnosed with pancreatic adenocarcinoma will be alive after 5-years.</p>  
+<p><b>Megan Dann Fesinmeyer, MPH (School of Public Health and Community
+Medicine, Institute for Public Health Genetics, University
+of Washington, Box 357236, 1959 NE Pacific Avenue, Seattle, WA
+98195)performed a literature review (PubMed from 1966 to 2005) of
+studies (cohort and case-control human studies) investigating
+the association between all types of smokeless tobacco and pancreatic
+cancer. She realized that although snus and other
+smokeless tobacco present a lesser lung cancer risk than cigarettes,
+these products may carry serious, uncharacterized risks. Four studies
+from the United States and two from Norway were identified. In total,
+these six studies included 1,383 pancreatic cancer cases, although the
+two Norwegian cohorts shared some subjects. Three out of six studies
+found that use of smokeless tobacco increased pancreatic cancer risk,
+with statistically significant odds ratios ranging from 1.67 to 3.5,
+although adjustment for potential confounders (smoking, alcohol, age,
+race) varied. Definitions of smokeless tobacco also varied between
+studies, including products of differing toxicity such as snus, chewing
+tobacco, and inhaled snuff. Smokeless tobacco exposure in study
+populations ranged from 1.3% to 19.7%. It was concluded that additional
+work is needed to clarify the association between smokeless tobacco and
+pancreatic cancer, to elucidate the smokless tobacco-related etiology
+of the disease, and to develop strategies to reduce pancreatic
+cancer risk among tobacco users. (Smokless Tobacco, Swedish Snus and
+Pancreatic Cancer, 13th World Conference Tobacco and Health, Friday,
+July 14, 2006).</b></p>
+<p><b>Nov. 14, 2005  - Dr. Stephen Hecht at the Univ. of Minnesota Cancer Center - concludes - &#8220;The evidence suggests, he continued,
+ &#8220;that smokeless products are in fact a cause of oral cancer and pancreatic cancer in humans. The current evidence does not
+ support smokeless tobacco as a substitute for cigarette smoking.&#8221; (Heart Center Online - Reuters)  </b></p><b> 
+</b><p><b>Smokeless tobacco (snus and chewing tobacco) may be a risk factor for pancreatic cancer.  (part of the found at Gothiatek web 
+site - Swedish Match). In a recently published prospective cohort study, comprising more than 10 000 Norwegian men, the 
+relationship between the use of smokeless tobacco (snus and chewing tobacco) and the risk of cancer of pancreas and other 
+organs, such as oral cavity/pharynx, esophagus, stomach, lung, kidney or bladder was studied. The authors found that snus 
+use was associated with significant increase in the risk of pancreatic cancer. The increase in risk was only seen among 
+ever-users of snus who were smokers at the start of the study, 40 years earlier. Snus use was, however, not associated with
+ increases in risk of cancer of the oral cavity/pharynx, esophagus, stomach, lung, kidney or bladder (Boffetta et al., 2005).</b></p>
+<b> 
+</b><p><b>Even Chris Proctor, head of science and regulation for British American Tobacco stated that snus is less harmful but not
+ harmless. &#8220;Smokers who switch should reduce their health risk, although the best way to avoid the risks is still not to
+ consume tobacco at all.&#8221; </b></p><b> 
+<h4><b><a name="Other"><u>Other Adverse Conditions</u></a></b></h4>
+<br>
+</b><p><b><u>Pregnancy</u> - the evidence regarding snuff use during pregnancy is limited. The results of one Swedish study showed an increased risk of
+ preterm delivery and preeclampsia and probably also reduced fetal growth, in the offspring of mothers who used snuff during
+ pregnancy . (2006 Tobaksfakta) Premature birth is now considered the leading cause of infant mortality in the
+United States - more than a third of all infant deaths (William M. Callaghan et al., Pediatrics, October 2006). </b></p>
+<p><b>Smokeless Tobacco Use <u>Increases Cataract Risk</u> - using snuff or chewing tobacco is associated with an increased likelihood
+ of developing cataracts, Indian researchers report Dr. Prema Raju of the Vision Research Foundation, Sankar Netralaya,
+Chennai and colleagues evaluated tobacco use among 3924 adults from rural areas. In all, 1705 used tobacco in various forms.
+Nine hundred subjects, mainly women, used smokeless tobacco -- either as snuff or for chewing -- while 731 smoked tobacco 
+predominantly in rolled cigarette-style bidis. The remainder used both forms. Overall, tobacco users had 72 percent higher
+prevalence of cataracts, the team reports in the British Journal of Ophthalmology. 
+However, the prevalence of cataracts was more than twice as great among those using the smokeless forms as compared to
+ smokers. Also, cataracts affected nine times more heavy users of smokeless as compared to heavy smokers, the researchers report.
+Dr. Raju mentioned that smokeless tobacco users have three-times higher levels of cadmium in their blood than 
+non-users. Cadmium present in tobacco inactivates superoxide dismutase, an antioxidant, resulting in oxidant damage to the lens 
+of the eye British Journal of Ophthalmology, online July 12, 2006.(Reuters Health News, 7/24/2006) </b></p>
+<p><b><u>Metabolic Syndrome</u> - researchers from Umeå University in
+ Sweden have discovered that consuming more than four cans of oral smokeless tobacco (snus) per week increases the risk 
+of developing metabolic syndrome, which in turn can increase the risk of heart and circulatory disease and diabetes.
+ This fact is demonstrated by the world’s most extensive long-term study on oral smokeless tobacco (snus) use. 
+Margareta Norberg, a doctor in the Epidemiology and Public Health Studies Department at Umeå University and one of the
+ researchers involved in the study, states: “Our results are a warning that show it is important to continue vigilance on 
+the adverse health effects of snus.” The study is due to be published in the December 2006 issue of the Scandinavian 
+Journal of Public Health (Globalink, Global Tobacco Control), European News Bulletin 176:18-24, August 2006).</b></p> 
+<p><b><u>Delayed Wound Healing</u> - the association between cigarette smoking and delayed wound healing is well recognized
+in clincal practice. This same adverse condition most likely occurs in users of smokeless tobacco. Potential mechanisms by which
+tobacco use delays wound healing include: nicotine is a vasoconstrictor that reduces nutritional blood flow to the skin
+resulting in  tissue ischemia also nicotine reduces the proliferation of red blood cells, fibroblasts and macropahges
+(Smoking and wound healing, P Silverstein, Ann J Med 93(1A):225-245, 1992).
+ In addition,
+in orthopaedic conditions - several studies have shown that nicotine interferes with healing of bone fractures and also inhibits 
+bone fusion processes --- many spine surgeons, e.g., won't do certain operations on people who smoke because of the risk of
+failure. Nicotine has also  been found to effect tendon and ligament healing. Studying rotator cuff injury in rats, researchers
+at Washington University School of Medicine in St. Louis found exposure to nicotine delays tendon-to-bone healing, suggesting 
+this could cause failure of rotator cuff repair following surgery in human patients  
+(Nicotine Delays Tendon-to-Bone Healing In A Rat Shoilder Model, L Galatz et al., Journal Bone Joint Surgery 88:2027-2034, 2006).
+</b></p> 
+<p><b><u>Nicotine Promotes Growth Of Tumors Already Established By Tobacco Carcinogens</u>
+While it is established that nicotine by itself is not carcinogenic, researchers have now shown that nicotine promotes 
+cell proliferation and the progression of tumors already initiated by tobacco carcinogens. 
+In a study by Srikumar Chellappan and colleagues from the University of South Florida appearing online on July 20 
+in advance of print publication in the August (2006) issue of the Journal of Clinical Investigation, the authors show that the
+ presence of receptors that bind nicotine, known as nicotinic acetylcholine receptors (nAChRs), on bronchial cells as well
+ as lung cancer cells are key to nicotine-induced cell proliferation of lung cancer cells. Also, Christopher Heeschen,
+ James J. Jang, Michael Weis, Anjali Pathak, Shuichiro Kaji, Robert S. Hu, Philip S. Tsao, Frances 
+L. Johnson & John P. Cooke, Nicotine stimulates angiogenesis and promotes tumor growth and atherosclerosis, Nature Medicine
+7: 833 - 839, 2001. </b></p>
+<p><b><u>
+<a href="http://www.sciencedaily.com/releases/2007/01/070129160342.htm">
+Nicotine: the Link Between Cigarette Smoking and Kidney Disease</a></u> A new study has demonstrated that human mesangial cells
+ (cells in the blood vessels of the kidneys) are endowed with nicotinic receptors and may play an active role in the
+ development of certain kidney diseases. Nicotine, at concentrations similar to those found in the plasma of smokers, 
+promote mesangial cell proliferation and may accelerate and promote the progression of chronic kidney disease.  
+(EA Jaimes, Run-Xia Tian and L Raij, Am J Physiol Heart Circ Physiol  292: H66-H75, 2007). </b></p>
+<p>Nicotine: (from John Polito, Esq, Editor - Why Quit? - written communication 8/15/2007) There is growing concern that nicotine contributes to poor
+ memory, a host of mental health disorders, destruction of brain
+ gray matter, early dementia, cardiovascular disease, kidney disease, stomach and duodenal ulcers, and macula degeneration 
+that produces blindness? Is it true that nicotine accelerates tumor growth rates and reduces chemotherapy effectiveness? </p> 
+<font size="3">Please remember that snus-like products contain relatively more nicotine than a tobacco cigarette.</font>
+ <br> <br>
+<h3><b><a name="Promotion"><u>Promotion of Moist Snuff - <font size="5">NO</font> - More Research/Regulations Needed</u></a></b></h3>
+<p><b> Both the social and life scientist involved with tobacco
+control (elimination) must come together to prevent the wide distribution of
+smokeless, spitless tobacco products - SNUS. Dr. Gunilla Bolinder, director of education at 
+Stockholm's Karolinska University Hospital points out, "To sing the praises of SNUS is a deathblow 
+to 20 years of hard tobacco preventive work in Sweden. SNUS only saves the life of the tobacco industry"
+(SNUS gets the thumbs-down NEWS-24 1/31/2007). </b></p>
+<b><p>
+In a cohort study it was found (after 20 years of follow-up) the risk of dying from major tobacco-related diseases
+including lung cancer, coronary heart disease, stroke and COPD were higher among former cigarette
+smokers who switched to spit tobacco after they stopped smoking than among those who quit using tobacco 
+entirely. The cohort consisted of 116,395 men that were identified as switchers (n=4443) or cigarette smokers 
+who quit using tobacco entirely (n=111,952) when enrolled in the ongoing ACS Cancer Prevention Study II. 
+(<a href="http://tc.bmj.com/cgi/content/full/16/1/22">Tobacco-related disease mortality among men who
+ switched from cigarettes to spit tobacco, 
+S. Jane Henley et al., Tobacco Control 16:22-28, 2007</a>)   </b></p>
+<p><b>Scott Ballin, the former chairman of the Coalition on
+Smoking and Health points out that such moistened snuff products are on the way
+and the public health community needs to start thinking hard about how to deal
+with them - like NOW. </b></p>
+<p><b>Smokeless tobacco use between 1986 and 2003 was low among adolescent girls and remained unchanged during the study period.
+For 12th grade boys, it rose slightly from 1986 until the early 1990s. From the mid-1990s to 2003 smokeless tobacco 
+use among 8th, 10th, and 12th grade boys dropped sharply.(Nelson, DE et al, Am J Public Health 
+96(5): 897-905, 2006).  <font color="#ff0000" size="4"><u>Let's make sure this trend continues.</u></font></b></p>
+<b>Weâ€™d like to dedicate these modules to 
+<a href="#" onmouseover="doTooltip(event,9)" onmouseout="hideTip()">Richard H. Carmona, M.D., MPH, the 
+17th  Surgeon  General</a> of the United States who
+ resigned his post on July 31, 2006. Heâ€™ll never be forgotten for his bold statement on Tuesday, June 3, 2003 testifying 
+before the Subcommittee on  Commerce, Trade and Consumer Protection (Committee on Energy and Commerce, United States House
+ of Representatives) at the hearing, &#8220;Can Tobacco Cure Smoking? A Review of Tobacco Harm Reduction" - <i>the Subcommitee was
+addressing an effort by US Smokeless Tobacco Company (UST), to have their products recognized and marketed as less
+harmful than cigarettes</i>. When  asked  by
+ Rep. Ed Whitfield (R-Ky.), if he would support the &#8216;abolition of all tobacco productsâ€™ - Dr. Carmona  said, That he was 
+"... not a legislator but that he would "support banning or abolishing tobacco products." 
+He saw <a href="snus_banned_tobacco_cmt.html">"no need for any tobacco 
+products in society."</a>
+This was the first time the governmentâ€™s top doctor and public health
+advocate has made such a strong statement. From this point on he was
+kept on a tight leash by the administration thereafter. 
+<a href="Carmano_SG_News_Observer_7_11_2007.jpg">(The News & Observer: Carmona says Bush officials muzzled him - 
+July 11, 2007.)</a>
+ Even though
+frustrated by political pressure that favored tobacco interests he was
+able to publish the 
+<a href="http://www.cdc.gov/tobacco/data_statistics/sgr/sgr_2006/index.htm">
+Surgeon Generalâ€™s Report of 2006</a> - "Health Consequences of Involuntary Exposure to Tobacco Smoke" - a comprehensive
+science-based report that emphasized the dangers of second-hand smoke -
+&#8220;involuntary smoking.&#8221; Dr.Carmona's blunt and extensively researched
+report found that there is no risk-free level of exposure to secondhand
+smoke and said the only way to protect nonsmokers from the dangerous
+chemicals in secondhand smoke is to eliminate smoking indoors. In his
+opening remarks at the hearing Dr. Carmona started with a few
+statements that were once accepted throughout society that have now
+been relegated to the status of myth.<br>
+<blockquote>Men do not suffer from depression. <br>
+	Domestic violence is a 'family' or 'private' matter. <br>
+	The HIV-AIDS epidemic is of no concern to most Americans. <br> <br>
+All of us here know that these three statements are very dangerous public health myths.<br> <br> 
+</blockquote>
+My remarks today will focus on a <u>fourth public health myth</u> which could have severe consequences in our nation,
+ <font size="4">especially among our youth: 
+smokeless tobacco is a good alternative to smoking. It is a myth. It is not true.</font></b><p></p>
+<p><b>In conclusion the Surgeon General stated that, &#8220;We simply do not have enough quality scientific evidence to 
+conclude that any tobacco product, including smokeless tobacco, is a means of reducing the risks of cigarette smoking. 
+At this time, any public health recommendation that positions smokeless tobacco as a safer substitute for cigarettes or
+ as a quitting aid would be premature and dangerous. With the memory of our experience with 
+<a href="Share__the__Blame.html">low-tar cigarettes</a> fresh in
+ our minds, we must move extremely cautiously before making any statement or endorsement about the potential reduced risk 
+of any tobacco product."</b></p>
+<p><b>We are in agreement with Drs. Dorothy Hatsukami, Charlotte Lemmonds and Scott Tomar in that considerable more quality
+research and product regulation is necessary prior to considering smokeless tobacco as a harm reduction method 
+(Prev Med 38(3):309-317, 2004).</b></p>
+<center>
+<b><font color="#ff0000" size="5">WHO World NO Tobacco Day 5/31/06 - Tobacco, Deadly in Any Form or Disguise.</font>
+</b><br><br> <img src="NO_snus_cigarettes1.jpg"></center>
+<b>   
+</b>
+<br>
+<hr align="center" noshade="noshade" size="2" width="300">
+<center>
+<i>Copyright Notice: The content of this web module may not be copied <br>
+or used in any manner without permission of the authors.</i> </center>
+<script><!--
+function SiteStats_1525(){
+var t=new Date();
+var u='http://goodhealth.freeservers.com/cgi-bin/sitestats.gif?p='+escape(location.href)+';r='+escape(document.referrer)+';t='+t.getTime();
+var I=new Image(1,1);  I.src=u;
+ }
+ SiteStats_1525();
+//--></script><noscript><img src="cgi-bin/sitestats.gif" width="1" height="1"></noscript>
+</form>
+<div id="tipDiv" style="position:absolute; visibility:hidden; z-index:100"></div>
+<script type="text/javascript">
+//Visit JavaScriptKit.com for free JavaScripts
+//This notice must stay intact for legal use
+//Win Type: Pop Up | Session Only
+//Specify URLs to randomly select from and popup/popunder:
+//To display a single URL, just remove all but the first entry below:
+var popurls=new Array()
+popurls[0]="SNUS-newsbriefs_index.html"
+<!-- commented out 8/16/2008 - went to new system - 
+function openpopup(popurl){
+var winpops=window.open(popurl,"","width=600,height=500,toolbar,location,status,scrollbars,menubar,resizable")
+}
+-->
+function get_cookie(Name) {
+  var search = Name + "="
+  var returnvalue = "";
+  if (document.cookie.length > 0) {
+    offset = document.cookie.indexOf(search)
+    if (offset != -1) { // if cookie exists
+      offset += search.length
+      // set index of beginning of value
+      end = document.cookie.indexOf(";", offset);
+      // set index of end of cookie value
+      if (end == -1)
+         end = document.cookie.length;
+      returnvalue=unescape(document.cookie.substring(offset, end))
+      }
+   }
+  return returnvalue;
+}
+function loadornot(){
+if (get_cookie('jkpopup')==''){
+openpopup(popurls[Math.floor(Math.random()*(popurls.length))])
+document.cookie="jkpopup=yes"
+}
+}
+loadornot()
+</script>
+</body></html>

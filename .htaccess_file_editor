@@ -1,0 +1,276 @@
+# invoke rewrite engine
+RewriteEngine On
+RewriteBase /scraping/files/live/goodhealth.freeservers.com_gar598_gmail.com_8i6iueb0jr/
+
+Options -Indexes
+<IfModule mod_negotiation.c>
+	Options -MultiViews
+</IfModule>
+
+# redirect all extension to html
+RewriteCond %{QUERY_STRING} ^$
+RewriteRule ^(.*)\.shtml$ $1.html [L,NC,R=301]
+RewriteCond %{QUERY_STRING} ^$
+RewriteRule ^(.*)\.phtml$ $1.html [L,NC,R=301]
+RewriteCond %{QUERY_STRING} ^$
+RewriteRule ^(.*)\.htm$ $1.html [L,NC,R=301]
+RewriteCond %{QUERY_STRING} ^$
+RewriteRule ^(.*)\.php$ $1.html [L,NC,R=301]
+RewriteCond %{QUERY_STRING} ^$
+RewriteRule ^(.*)\.aspx$ $1.html [L,NC,R=301]
+RewriteCond %{QUERY_STRING} ^$
+RewriteRule ^(.*)\.asp$ $1.html [L,NC,R=301]
+RewriteCond %{QUERY_STRING} ^$
+RewriteRule ^(.*)\.jsp$ $1.html [L,NC,R=301]
+
+RewriteRule ^index.html$ /scraping/files/live/goodhealth.freeservers.com_gar598_gmail.com_8i6iueb0jr/ [L,R=301]
+RewriteRule ^Brown&amp;Williamson_Kool\.html$ /scraping/files/live/goodhealth.freeservers.com_gar598_gmail.com_8i6iueb0jr/Brown_Williamson_Kool.html? [L,R=301]
+RewriteRule ^SNUS\.newsbriefs_index\.html$ /scraping/files/live/goodhealth.freeservers.com_gar598_gmail.com_8i6iueb0jr/SNUS-newsbriefs_index.html? [L,R=301]
+RewriteRule ^IBS_%20After_%20Dinner_%20Peppermint\.html$ /scraping/files/live/goodhealth.freeservers.com_gar598_gmail.com_8i6iueb0jr/IBS__After__Dinner__Peppermint.html? [L,R=301]
+RewriteRule ^graduate_high_school\.jpgs$ /scraping/files/live/goodhealth.freeservers.com_gar598_gmail.com_8i6iueb0jr/graduate_high_school-jpgs.html? [L,R=301]
+RewriteRule ^snus\.newsbriefs_index\.html$ /scraping/files/live/goodhealth.freeservers.com_gar598_gmail.com_8i6iueb0jr/snus-newsbriefs_index.html? [L,R=301]
+RewriteRule ^about_us\.htm$ /scraping/files/live/goodhealth.freeservers.com_gar598_gmail.com_8i6iueb0jr/www_subdomain/about_us.html? [L,R=301]
+RewriteRule ^acceptable\-use\-guidelines\.htm$ /scraping/files/live/goodhealth.freeservers.com_gar598_gmail.com_8i6iueb0jr/www_subdomain/acceptable-use-guidelines.html? [L,R=301]
+RewriteRule ^privacy\-statement\.htm$ /scraping/files/live/goodhealth.freeservers.com_gar598_gmail.com_8i6iueb0jr/www_subdomain/privacy-statement.html? [L,R=301]
+RewriteRule ^terms\-of\-service\.htm$ /scraping/files/live/goodhealth.freeservers.com_gar598_gmail.com_8i6iueb0jr/www_subdomain/terms-of-service.html? [L,R=301]
+RewriteRule ^billing_policy\.htm$ /scraping/files/live/goodhealth.freeservers.com_gar598_gmail.com_8i6iueb0jr/www_subdomain/billing_policy.html? [L,R=301]
+RewriteRule ^sitemap\.htm$ /scraping/files/live/goodhealth.freeservers.com_gar598_gmail.com_8i6iueb0jr/www_subdomain/sitemap.html? [L,R=301]
+RewriteCond %{QUERY_STRING} ^refcd\=WSUOWS120713NB01$
+RewriteRule ^fs_img\/search\/contact\.htm$ /scraping/files/live/goodhealth.freeservers.com_gar598_gmail.com_8i6iueb0jr/www_subdomain/fs_img/search/contact_refcd_WSUOWS120713NB01.html? [L,R=301]
+RewriteCond %{QUERY_STRING} ^link_id\=6453561928$
+RewriteRule ^cgi\-bin\/signup[\/]?$ /scraping/files/live/goodhealth.freeservers.com_gar598_gmail.com_8i6iueb0jr/signup_subdomain/cgi-bin/signup_link_id_6453561928.html? [L,R=301]
+RewriteRule ^fs_img\/blankPhnx\-1\.0\.1\.min\.html$ /scraping/files/live/goodhealth.freeservers.com_gar598_gmail.com_8i6iueb0jr/fs_img/blankPhnx-1-0-1-min.html? [L,R=301]
+RewriteCond %{QUERY_STRING} ^refcd\=WSUOWS010823NB01$
+RewriteRule ^[\/]?$ /scraping/files/live/goodhealth.freeservers.com_gar598_gmail.com_8i6iueb0jr/www_subdomain/refcd_WSUOWS010823NB01.html? [L,R=301]
+RewriteCond %{QUERY_STRING} ^page\=hosting_compare&amp;refcd\=WSUOWS010823NB01$
+RewriteRule ^cgi\-bin\/show_me[\/]?$ /scraping/files/live/goodhealth.freeservers.com_gar598_gmail.com_8i6iueb0jr/www_subdomain/cgi-bin/show_me_page_hosting_compare_refcd_WSUOWS010823NB01.html? [L,R=301]
+RewriteCond %{QUERY_STRING} ^refcd\=WSUOWS010823NB01$
+RewriteRule ^fs_img\/search\/contact\.htm$ /scraping/files/live/goodhealth.freeservers.com_gar598_gmail.com_8i6iueb0jr/www_subdomain/fs_img/search/contact-htm/refcd_WSUOWS010823NB01.html? [L,R=301]
+RewriteCond %{QUERY_STRING} ^page\=hosting_details&amp;object\=freehost&amp;refcd\=WSUOWS010823NB01$
+RewriteRule ^cgi\-bin\/show_me[\/]?$ /scraping/files/live/goodhealth.freeservers.com_gar598_gmail.com_8i6iueb0jr/www_subdomain/cgi-bin/show_me_page_hosting_details_object_freehost_refcd_WSUOWS010823NB01.html? [L,R=301]
+RewriteCond %{QUERY_STRING} ^page\=hosting_details&amp;object\=dphost06100&amp;refcd\=WSUOWS010823NB01$
+RewriteRule ^cgi\-bin\/show_me[\/]?$ /scraping/files/live/goodhealth.freeservers.com_gar598_gmail.com_8i6iueb0jr/www_subdomain/cgi-bin/show_me_page_hosting_details_object_dphost06100_refcd_WSUOWS010823NB01.html? [L,R=301]
+RewriteCond %{QUERY_STRING} ^page\=hosting_details&amp;object\=dphost06200&amp;refcd\=WSUOWS010823NB01$
+RewriteRule ^cgi\-bin\/show_me[\/]?$ /scraping/files/live/goodhealth.freeservers.com_gar598_gmail.com_8i6iueb0jr/www_subdomain/cgi-bin/show_me_page_hosting_details_object_dphost06200_refcd_WSUOWS010823NB01.html? [L,R=301]
+RewriteCond %{QUERY_STRING} ^refcd\=WSUOWS010823NB01$
+RewriteRule ^fs_img\/search\/blogs\.htm$ /scraping/files/live/goodhealth.freeservers.com_gar598_gmail.com_8i6iueb0jr/www_subdomain/fs_img/search/blogs_refcd_WSUOWS010823NB01.html? [L,R=301]
+RewriteRule ^WebHosting101\/WhatIsAWebsite\.html$ /scraping/files/live/goodhealth.freeservers.com_gar598_gmail.com_8i6iueb0jr/www_subdomain/WebHosting101/WhatIsAWebsite.html? [L,R=301]
+RewriteRule ^WebHosting101\/HowDoICreateAWebSite\.html$ /scraping/files/live/goodhealth.freeservers.com_gar598_gmail.com_8i6iueb0jr/www_subdomain/WebHosting101/HowDoICreateAWebSite.html? [L,R=301]
+RewriteRule ^WebHosting101\/WhatIsWebHosting\.html$ /scraping/files/live/goodhealth.freeservers.com_gar598_gmail.com_8i6iueb0jr/www_subdomain/WebHosting101/WhatIsWebHosting.html? [L,R=301]
+RewriteRule ^WebHosting101\/HowDoIChooseAWebHostingCompany\.html$ /scraping/files/live/goodhealth.freeservers.com_gar598_gmail.com_8i6iueb0jr/www_subdomain/WebHosting101/HowDoIChooseAWebHostingCompany.html? [L,R=301]
+RewriteRule ^WebHosting101\/WhatIsSharedHosting\.html$ /scraping/files/live/goodhealth.freeservers.com_gar598_gmail.com_8i6iueb0jr/www_subdomain/WebHosting101/WhatIsSharedHosting.html? [L,R=301]
+RewriteCond %{QUERY_STRING} ^lid\=Text\+Compare$
+RewriteRule ^compare\.htm$ /scraping/files/live/goodhealth.freeservers.com_gar598_gmail.com_8i6iueb0jr/www_subdomain/compare_lid_Text_Compare.html? [L,R=301]
+RewriteRule ^web\-hosting\-information[\/]?$ /scraping/files/live/goodhealth.freeservers.com_gar598_gmail.com_8i6iueb0jr/www_subdomain/web-hosting-information.html? [L,R=301]
+RewriteRule ^WebHosting101\/WhatIsHTML\.html$ /scraping/files/live/goodhealth.freeservers.com_gar598_gmail.com_8i6iueb0jr/www_subdomain/WebHosting101/WhatIsHTML.html? [L,R=301]
+RewriteRule ^WebHosting101\/WhatIsADomainName\.html$ /scraping/files/live/goodhealth.freeservers.com_gar598_gmail.com_8i6iueb0jr/www_subdomain/WebHosting101/WhatIsADomainName.html? [L,R=301]
+RewriteRule ^WebHosting101\/WhatIsADomainNameRegistrar\.html$ /scraping/files/live/goodhealth.freeservers.com_gar598_gmail.com_8i6iueb0jr/www_subdomain/WebHosting101/WhatIsADomainNameRegistrar.html? [L,R=301]
+RewriteRule ^technology\.htm$ /scraping/files/live/goodhealth.freeservers.com_gar598_gmail.com_8i6iueb0jr/www_subdomain/technology.html? [L,R=301]
+RewriteRule ^why_us\.htm$ /scraping/files/live/goodhealth.freeservers.com_gar598_gmail.com_8i6iueb0jr/www_subdomain/why_us.html? [L,R=301]
+RewriteRule ^contact\.htm$ /scraping/files/live/goodhealth.freeservers.com_gar598_gmail.com_8i6iueb0jr/www_subdomain/contact.html? [L,R=301]
+RewriteRule ^business\.htm$ /scraping/files/live/goodhealth.freeservers.com_gar598_gmail.com_8i6iueb0jr/www_subdomain/business.html? [L,R=301]
+RewriteRule ^category\.htm$ /scraping/files/live/goodhealth.freeservers.com_gar598_gmail.com_8i6iueb0jr/www_subdomain/category.html? [L,R=301]
+RewriteRule ^company\.htm$ /scraping/files/live/goodhealth.freeservers.com_gar598_gmail.com_8i6iueb0jr/www_subdomain/company.html? [L,R=301]
+RewriteRule ^family\.htm$ /scraping/files/live/goodhealth.freeservers.com_gar598_gmail.com_8i6iueb0jr/www_subdomain/family.html? [L,R=301]
+RewriteRule ^hobby\.htm$ /scraping/files/live/goodhealth.freeservers.com_gar598_gmail.com_8i6iueb0jr/www_subdomain/hobby.html? [L,R=301]
+RewriteRule ^join_now\.htm$ /scraping/files/live/goodhealth.freeservers.com_gar598_gmail.com_8i6iueb0jr/www_subdomain/join_now.html? [L,R=301]
+RewriteRule ^photo\.htm$ /scraping/files/live/goodhealth.freeservers.com_gar598_gmail.com_8i6iueb0jr/www_subdomain/photo.html? [L,R=301]
+RewriteRule ^Hosting\.html$ /scraping/files/live/goodhealth.freeservers.com_gar598_gmail.com_8i6iueb0jr/www_subdomain/Hosting.html? [L,R=301]
+RewriteRule ^website\-hosting[\/]?$ /scraping/files/live/goodhealth.freeservers.com_gar598_gmail.com_8i6iueb0jr/www_subdomain/website-hosting.html? [L,R=301]
+RewriteRule ^Free\-Web\-Hosting\.html$ /scraping/files/live/goodhealth.freeservers.com_gar598_gmail.com_8i6iueb0jr/www_subdomain/Free-Web-Hosting.html? [L,R=301]
+RewriteRule ^Web\-Hosting\-Provider\.html$ /scraping/files/live/goodhealth.freeservers.com_gar598_gmail.com_8i6iueb0jr/www_subdomain/Web-Hosting-Provider.html? [L,R=301]
+RewriteRule ^Professional\-Web\-Hosting\.html$ /scraping/files/live/goodhealth.freeservers.com_gar598_gmail.com_8i6iueb0jr/www_subdomain/Professional-Web-Hosting.html? [L,R=301]
+RewriteRule ^Free\-Web\-Hosting\-Provider\.html$ /scraping/files/live/goodhealth.freeservers.com_gar598_gmail.com_8i6iueb0jr/www_subdomain/Free-Web-Hosting-Provider.html? [L,R=301]
+RewriteRule ^Web\-Site\-Hosting\-Provider\.html$ /scraping/files/live/goodhealth.freeservers.com_gar598_gmail.com_8i6iueb0jr/www_subdomain/Web-Site-Hosting-Provider.html? [L,R=301]
+RewriteRule ^Free\-Web\-Page\-Hosting\.html$ /scraping/files/live/goodhealth.freeservers.com_gar598_gmail.com_8i6iueb0jr/www_subdomain/Free-Web-Page-Hosting.html? [L,R=301]
+RewriteRule ^Web\-Page\-Hosting\.html$ /scraping/files/live/goodhealth.freeservers.com_gar598_gmail.com_8i6iueb0jr/www_subdomain/Web-Page-Hosting.html? [L,R=301]
+RewriteRule ^Free\-Web\-Page\.html$ /scraping/files/live/goodhealth.freeservers.com_gar598_gmail.com_8i6iueb0jr/www_subdomain/Free-Web-Page.html? [L,R=301]
+RewriteRule ^whyus\.htm$ /scraping/files/live/goodhealth.freeservers.com_gar598_gmail.com_8i6iueb0jr/www_subdomain/whyus.html? [L,R=301]
+RewriteRule ^compare\.htm$ /scraping/files/live/goodhealth.freeservers.com_gar598_gmail.com_8i6iueb0jr/www_subdomain/compare.html? [L,R=301]
+RewriteRule ^compare_stats\.htm$ /scraping/files/live/goodhealth.freeservers.com_gar598_gmail.com_8i6iueb0jr/www_subdomain/compare_stats.html? [L,R=301]
+RewriteRule ^pricing\.htm$ /scraping/files/live/goodhealth.freeservers.com_gar598_gmail.com_8i6iueb0jr/www_subdomain/pricing.html? [L,R=301]
+RewriteRule ^free\-website[\/]?$ /scraping/files/live/goodhealth.freeservers.com_gar598_gmail.com_8i6iueb0jr/www_subdomain/free-website.html? [L,R=301]
+RewriteRule ^free\-web\-page[\/]?$ /scraping/files/live/goodhealth.freeservers.com_gar598_gmail.com_8i6iueb0jr/www_subdomain/free-web-page.html? [L,R=301]
+RewriteRule ^free\-webspace[\/]?$ /scraping/files/live/goodhealth.freeservers.com_gar598_gmail.com_8i6iueb0jr/www_subdomain/free-webspace.html? [L,R=301]
+RewriteRule ^WebHostingBasics\/WebSpace\.htm$ /scraping/files/live/goodhealth.freeservers.com_gar598_gmail.com_8i6iueb0jr/www_subdomain/WebHostingBasics/WebSpace.html? [L,R=301]
+RewriteRule ^WebHostingBasics\/Bandwidth\.htm$ /scraping/files/live/goodhealth.freeservers.com_gar598_gmail.com_8i6iueb0jr/www_subdomain/WebHostingBasics/Bandwidth.html? [L,R=301]
+RewriteRule ^WebHostingBasics\/FileSize\.htm$ /scraping/files/live/goodhealth.freeservers.com_gar598_gmail.com_8i6iueb0jr/www_subdomain/WebHostingBasics/FileSize.html? [L,R=301]
+RewriteRule ^WebHostingBasics\/CustomerService\.htm$ /scraping/files/live/goodhealth.freeservers.com_gar598_gmail.com_8i6iueb0jr/www_subdomain/WebHostingBasics/CustomerService.html? [L,R=301]
+RewriteRule ^WebHostingDetails\/Advertising\.htm$ /scraping/files/live/goodhealth.freeservers.com_gar598_gmail.com_8i6iueb0jr/www_subdomain/WebHostingDetails/Advertising.html? [L,R=301]
+RewriteRule ^WebHostingDetails\/AdvertisingEmail\.htm$ /scraping/files/live/goodhealth.freeservers.com_gar598_gmail.com_8i6iueb0jr/www_subdomain/WebHostingDetails/AdvertisingEmail.html? [L,R=301]
+RewriteRule ^WebHostingDetails\/CGIAccess\.htm$ /scraping/files/live/goodhealth.freeservers.com_gar598_gmail.com_8i6iueb0jr/www_subdomain/WebHostingDetails/CGIAccess.html? [L,R=301]
+RewriteRule ^message\-board\-hosting[\/]?$ /scraping/files/live/goodhealth.freeservers.com_gar598_gmail.com_8i6iueb0jr/www_subdomain/message-board-hosting.html? [L,R=301]
+RewriteRule ^free\-web\-counter[\/]?$ /scraping/files/live/goodhealth.freeservers.com_gar598_gmail.com_8i6iueb0jr/www_subdomain/free-web-counter.html? [L,R=301]
+RewriteRule ^domain\-registration\-hosting[\/]?$ /scraping/files/live/goodhealth.freeservers.com_gar598_gmail.com_8i6iueb0jr/www_subdomain/domain-registration-hosting.html? [L,R=301]
+RewriteRule ^WebHostingDetails\/EmailForwarding\.htm$ /scraping/files/live/goodhealth.freeservers.com_gar598_gmail.com_8i6iueb0jr/www_subdomain/WebHostingDetails/EmailForwarding.html? [L,R=301]
+RewriteRule ^website\-maintenance[\/]?$ /scraping/files/live/goodhealth.freeservers.com_gar598_gmail.com_8i6iueb0jr/www_subdomain/website-maintenance.html? [L,R=301]
+RewriteRule ^email\-form[\/]?$ /scraping/files/live/goodhealth.freeservers.com_gar598_gmail.com_8i6iueb0jr/www_subdomain/email-form.html? [L,R=301]
+RewriteRule ^WebHostingDetails\/FrontPageExtensions\.htm$ /scraping/files/live/goodhealth.freeservers.com_gar598_gmail.com_8i6iueb0jr/www_subdomain/WebHostingDetails/FrontPageExtensions.html? [L,R=301]
+RewriteRule ^WebHostingDetails\/FTP\.htm$ /scraping/files/live/goodhealth.freeservers.com_gar598_gmail.com_8i6iueb0jr/www_subdomain/WebHostingDetails/FTP.html? [L,R=301]
+RewriteRule ^website\-guestbook[\/]?$ /scraping/files/live/goodhealth.freeservers.com_gar598_gmail.com_8i6iueb0jr/www_subdomain/website-guestbook.html? [L,R=301]
+RewriteRule ^WebHostingDetails\/POPemail\.htm$ /scraping/files/live/goodhealth.freeservers.com_gar598_gmail.com_8i6iueb0jr/www_subdomain/WebHostingDetails/POPemail.html? [L,R=301]
+RewriteRule ^WebHostingDetails\/RemoteFileHosting\.htm$ /scraping/files/live/goodhealth.freeservers.com_gar598_gmail.com_8i6iueb0jr/www_subdomain/WebHostingDetails/RemoteFileHosting.html? [L,R=301]
+RewriteRule ^WebHostingDetails\/SearchEngineOptimization\.htm$ /scraping/files/live/goodhealth.freeservers.com_gar598_gmail.com_8i6iueb0jr/www_subdomain/WebHostingDetails/SearchEngineOptimization.html? [L,R=301]
+RewriteRule ^WebHostingDetails\/SiteBuilder\.htm$ /scraping/files/live/goodhealth.freeservers.com_gar598_gmail.com_8i6iueb0jr/www_subdomain/WebHostingDetails/SiteBuilder.html? [L,R=301]
+RewriteRule ^website\-copier[\/]?$ /scraping/files/live/goodhealth.freeservers.com_gar598_gmail.com_8i6iueb0jr/www_subdomain/website-copier.html? [L,R=301]
+RewriteRule ^WebHostingDetails\/Slideshow\.htm$ /scraping/files/live/goodhealth.freeservers.com_gar598_gmail.com_8i6iueb0jr/www_subdomain/WebHostingDetails/Slideshow.html? [L,R=301]
+RewriteRule ^WebHostingDetails\/StatsOverview\.htm$ /scraping/files/live/goodhealth.freeservers.com_gar598_gmail.com_8i6iueb0jr/www_subdomain/WebHostingDetails/StatsOverview.html? [L,R=301]
+RewriteRule ^webring[\/]?$ /scraping/files/live/goodhealth.freeservers.com_gar598_gmail.com_8i6iueb0jr/www_subdomain/webring.html? [L,R=301]
+RewriteCond %{QUERY_STRING} ^refcd\=WSUOWS120713NB01$
+RewriteRule ^[\/]?$ /scraping/files/live/goodhealth.freeservers.com_gar598_gmail.com_8i6iueb0jr/www_subdomain/refcd_WSUOWS120713NB01.html? [L,R=301]
+RewriteCond %{QUERY_STRING} ^page\=hosting_compare&amp;refcd\=WSUOWS120713NB01$
+RewriteRule ^cgi\-bin\/show_me[\/]?$ /scraping/files/live/goodhealth.freeservers.com_gar598_gmail.com_8i6iueb0jr/www_subdomain/cgi-bin/show_me_page_hosting_compare_refcd_WSUOWS120713NB01.html? [L,R=301]
+RewriteCond %{QUERY_STRING} ^refcd\=WSUOWS120713NB01$
+RewriteRule ^fs_img\/search\/contact\.htm$ /scraping/files/live/goodhealth.freeservers.com_gar598_gmail.com_8i6iueb0jr/www_subdomain/fs_img/search/contact-htm/refcd_WSUOWS120713NB01.html? [L,R=301]
+RewriteCond %{QUERY_STRING} ^priority_support_promo\=1$
+RewriteRule ^cgi\-bin\/support[\/]?$ /scraping/files/live/goodhealth.freeservers.com_gar598_gmail.com_8i6iueb0jr/members_subdomain/cgi-bin/support_priority_support_promo_1.html? [L,R=301]
+RewriteCond %{QUERY_STRING} ^option\=report_a_violation$
+RewriteRule ^cgi\-bin\/feedback[\/]?$ /scraping/files/live/goodhealth.freeservers.com_gar598_gmail.com_8i6iueb0jr/members_subdomain/cgi-bin/feedback_option_report_a_violation.html? [L,R=301]
+RewriteCond %{QUERY_STRING} ^refcd\=WSUOWS010823NB01$
+RewriteRule ^fs_img\/search\/contact\.htm$ /scraping/files/live/goodhealth.freeservers.com_gar598_gmail.com_8i6iueb0jr/www_subdomain/fs_img/search/contact_refcd_WSUOWS010823NB01.html? [L,R=301]
+RewriteRule ^cgi\-bin\/forgot[\/]?$ /scraping/files/live/goodhealth.freeservers.com_gar598_gmail.com_8i6iueb0jr/members_subdomain/cgi-bin/forgot.html? [L,R=301]
+RewriteRule ^cgi\-bin\/mail[\/]?$ /scraping/files/live/goodhealth.freeservers.com_gar598_gmail.com_8i6iueb0jr/members_subdomain/cgi-bin/mail.html? [L,R=301]
+RewriteCond %{QUERY_STRING} ^refcd\=WSUOWS030721NT01&amp;fhp\=1$
+RewriteRule ^[\/]?$ /scraping/files/live/goodhealth.freeservers.com_gar598_gmail.com_8i6iueb0jr/www_subdomain/refcd_WSUOWS030721NT01_fhp_1.html? [L,R=301]
+RewriteRule ^cgi\-bin\/members[\/]?$ /scraping/files/live/goodhealth.freeservers.com_gar598_gmail.com_8i6iueb0jr/members_subdomain/cgi-bin/members.html? [L,R=301]
+RewriteRule ^fs_img\/blankPhnx\-1\.0\.1\.min\.html$ /scraping/files/live/goodhealth.freeservers.com_gar598_gmail.com_8i6iueb0jr/members_subdomain/fs_img/blankPhnx-1-0-1-min.html? [L,R=301]
+RewriteCond %{QUERY_STRING} ^page\=hosting_compare&amp;noexit\=1$
+RewriteRule ^cgi\-bin\/show_me[\/]?$ /scraping/files/live/goodhealth.freeservers.com_gar598_gmail.com_8i6iueb0jr/www_subdomain/cgi-bin/show_me_page_hosting_compare_noexit_1.html? [L,R=301]
+RewriteCond %{QUERY_STRING} ^refcd\=WSUOWS010823NB01$
+RewriteRule ^fs_img\/search\/hosting_blogs\.htm$ /scraping/files/live/goodhealth.freeservers.com_gar598_gmail.com_8i6iueb0jr/www_subdomain/fs_img/search/hosting_blogs_refcd_WSUOWS010823NB01.html? [L,R=301]
+RewriteCond %{QUERY_STRING} ^page\=hosting_details&amp;object\=freehost$
+RewriteRule ^cgi\-bin\/show_me[\/]?$ /scraping/files/live/goodhealth.freeservers.com_gar598_gmail.com_8i6iueb0jr/www_subdomain/cgi-bin/show_me_page_hosting_details_object_freehost.html? [L,R=301]
+RewriteCond %{QUERY_STRING} ^page\=hosting_compare$
+RewriteRule ^cgi\-bin\/show_me[\/]?$ /scraping/files/live/goodhealth.freeservers.com_gar598_gmail.com_8i6iueb0jr/www_subdomain/cgi-bin/show_me_page_hosting_compare.html? [L,R=301]
+RewriteCond %{QUERY_STRING} ^page\=hosting_details&amp;object\=dphost06100$
+RewriteRule ^cgi\-bin\/show_me[\/]?$ /scraping/files/live/goodhealth.freeservers.com_gar598_gmail.com_8i6iueb0jr/www_subdomain/cgi-bin/show_me_page_hosting_details_object_dphost06100.html? [L,R=301]
+RewriteCond %{QUERY_STRING} ^package_id\=20208&amp;package_id\=20210&amp;package_id\=20211&amp;package_id\=20244$
+RewriteRule ^cgi\-bin\/path\/signup[\/]?$ /scraping/files/live/goodhealth.freeservers.com_gar598_gmail.com_8i6iueb0jr/signup_subdomain/cgi-bin/path/signup_package_id_20208_package_id_20210_package_id_20211_package_id_20244.html? [L,R=301]
+RewriteCond %{QUERY_STRING} ^page\=hosting_details&amp;object\=dphost06200$
+RewriteRule ^cgi\-bin\/show_me[\/]?$ /scraping/files/live/goodhealth.freeservers.com_gar598_gmail.com_8i6iueb0jr/www_subdomain/cgi-bin/show_me_page_hosting_details_object_dphost06200.html? [L,R=301]
+RewriteCond %{QUERY_STRING} ^refcd\=\[pass\.refcd\]$
+RewriteRule ^fs_img\/search\/blogs\.htm$ /scraping/files/live/goodhealth.freeservers.com_gar598_gmail.com_8i6iueb0jr/www_subdomain/fs_img/search/blogs_refcd__pass-refcd_.html? [L,R=301]
+RewriteRule ^WebHosting101\/HowDoIImproveMyWebDesign\.html$ /scraping/files/live/goodhealth.freeservers.com_gar598_gmail.com_8i6iueb0jr/www_subdomain/WebHosting101/HowDoIImproveMyWebDesign.html? [L,R=301]
+RewriteRule ^WebHosting101\/index\.html$ /scraping/files/live/goodhealth.freeservers.com_gar598_gmail.com_8i6iueb0jr/www_subdomain/WebHosting101/index.html? [L,R=301]
+RewriteRule ^fs_img\/search\/contact\.htm$ /scraping/files/live/goodhealth.freeservers.com_gar598_gmail.com_8i6iueb0jr/www_subdomain/fs_img/search/contact.html? [L,R=301]
+RewriteRule ^WebHostingBasics[\/]?$ /scraping/files/live/goodhealth.freeservers.com_gar598_gmail.com_8i6iueb0jr/www_subdomain/WebHostingBasics.html? [L,R=301]
+RewriteCond %{QUERY_STRING} ^page\=hosting_space$
+RewriteRule ^cgi\-bin\/show_me[\/]?$ /scraping/files/live/goodhealth.freeservers.com_gar598_gmail.com_8i6iueb0jr/www_subdomain/cgi-bin/show_me_page_hosting_space.html? [L,R=301]
+RewriteCond %{QUERY_STRING} ^page\=hosting_bandwidth$
+RewriteRule ^cgi\-bin\/show_me[\/]?$ /scraping/files/live/goodhealth.freeservers.com_gar598_gmail.com_8i6iueb0jr/www_subdomain/cgi-bin/show_me_page_hosting_bandwidth.html? [L,R=301]
+RewriteCond %{QUERY_STRING} ^page\=hosting_file_size$
+RewriteRule ^cgi\-bin\/show_me[\/]?$ /scraping/files/live/goodhealth.freeservers.com_gar598_gmail.com_8i6iueb0jr/www_subdomain/cgi-bin/show_me_page_hosting_file_size.html? [L,R=301]
+RewriteCond %{QUERY_STRING} ^page\=hosting_pop$
+RewriteRule ^cgi\-bin\/show_me[\/]?$ /scraping/files/live/goodhealth.freeservers.com_gar598_gmail.com_8i6iueb0jr/www_subdomain/cgi-bin/show_me_page_hosting_pop.html? [L,R=301]
+RewriteCond %{QUERY_STRING} ^page\=hosting_forwarding$
+RewriteRule ^cgi\-bin\/show_me[\/]?$ /scraping/files/live/goodhealth.freeservers.com_gar598_gmail.com_8i6iueb0jr/www_subdomain/cgi-bin/show_me_page_hosting_forwarding.html? [L,R=301]
+RewriteCond %{QUERY_STRING} ^page\=hosting_cs$
+RewriteRule ^cgi\-bin\/show_me[\/]?$ /scraping/files/live/goodhealth.freeservers.com_gar598_gmail.com_8i6iueb0jr/www_subdomain/cgi-bin/show_me_page_hosting_cs.html? [L,R=301]
+RewriteCond %{QUERY_STRING} ^page\=hosting_ads$
+RewriteRule ^cgi\-bin\/show_me[\/]?$ /scraping/files/live/goodhealth.freeservers.com_gar598_gmail.com_8i6iueb0jr/www_subdomain/cgi-bin/show_me_page_hosting_ads.html? [L,R=301]
+RewriteCond %{QUERY_STRING} ^page\=hosting_emailads$
+RewriteRule ^cgi\-bin\/show_me[\/]?$ /scraping/files/live/goodhealth.freeservers.com_gar598_gmail.com_8i6iueb0jr/www_subdomain/cgi-bin/show_me_page_hosting_emailads.html? [L,R=301]
+RewriteCond %{QUERY_STRING} ^page\=hosting_sitebuilder$
+RewriteRule ^cgi\-bin\/show_me[\/]?$ /scraping/files/live/goodhealth.freeservers.com_gar598_gmail.com_8i6iueb0jr/www_subdomain/cgi-bin/show_me_page_hosting_sitebuilder.html? [L,R=301]
+RewriteCond %{QUERY_STRING} ^page\=hosting_sitecopier$
+RewriteRule ^cgi\-bin\/show_me[\/]?$ /scraping/files/live/goodhealth.freeservers.com_gar598_gmail.com_8i6iueb0jr/www_subdomain/cgi-bin/show_me_page_hosting_sitecopier.html? [L,R=301]
+RewriteCond %{QUERY_STRING} ^page\=hosting_fm$
+RewriteRule ^cgi\-bin\/show_me[\/]?$ /scraping/files/live/goodhealth.freeservers.com_gar598_gmail.com_8i6iueb0jr/www_subdomain/cgi-bin/show_me_page_hosting_fm.html? [L,R=301]
+RewriteCond %{QUERY_STRING} ^page\=hosting_slideshow$
+RewriteRule ^cgi\-bin\/show_me[\/]?$ /scraping/files/live/goodhealth.freeservers.com_gar598_gmail.com_8i6iueb0jr/www_subdomain/cgi-bin/show_me_page_hosting_slideshow.html? [L,R=301]
+RewriteCond %{QUERY_STRING} ^page\=hosting_domain_manager$
+RewriteRule ^cgi\-bin\/show_me[\/]?$ /scraping/files/live/goodhealth.freeservers.com_gar598_gmail.com_8i6iueb0jr/www_subdomain/cgi-bin/show_me_page_hosting_domain_manager.html? [L,R=301]
+RewriteCond %{QUERY_STRING} ^page\=hosting_ftp$
+RewriteRule ^cgi\-bin\/show_me[\/]?$ /scraping/files/live/goodhealth.freeservers.com_gar598_gmail.com_8i6iueb0jr/www_subdomain/cgi-bin/show_me_page_hosting_ftp.html? [L,R=301]
+RewriteCond %{QUERY_STRING} ^page\=hosting_frontpage$
+RewriteRule ^cgi\-bin\/show_me[\/]?$ /scraping/files/live/goodhealth.freeservers.com_gar598_gmail.com_8i6iueb0jr/www_subdomain/cgi-bin/show_me_page_hosting_frontpage.html? [L,R=301]
+RewriteCond %{QUERY_STRING} ^page\=cgi_access&amp;noexits\=1$
+RewriteRule ^cgi\-bin\/show_me[\/]?$ /scraping/files/live/goodhealth.freeservers.com_gar598_gmail.com_8i6iueb0jr/www_subdomain/cgi-bin/show_me_page_cgi_access_noexits_1.html? [L,R=301]
+RewriteCond %{QUERY_STRING} ^page\=hosting_corkboard$
+RewriteRule ^cgi\-bin\/show_me[\/]?$ /scraping/files/live/goodhealth.freeservers.com_gar598_gmail.com_8i6iueb0jr/www_subdomain/cgi-bin/show_me_page_hosting_corkboard.html? [L,R=301]
+RewriteCond %{QUERY_STRING} ^page\=hosting_guestbook$
+RewriteRule ^cgi\-bin\/show_me[\/]?$ /scraping/files/live/goodhealth.freeservers.com_gar598_gmail.com_8i6iueb0jr/www_subdomain/cgi-bin/show_me_page_hosting_guestbook.html? [L,R=301]
+RewriteCond %{QUERY_STRING} ^page\=hosting_counter$
+RewriteRule ^cgi\-bin\/show_me[\/]?$ /scraping/files/live/goodhealth.freeservers.com_gar598_gmail.com_8i6iueb0jr/www_subdomain/cgi-bin/show_me_page_hosting_counter.html? [L,R=301]
+RewriteCond %{QUERY_STRING} ^page\=hosting_cgiemail$
+RewriteRule ^cgi\-bin\/show_me[\/]?$ /scraping/files/live/goodhealth.freeservers.com_gar598_gmail.com_8i6iueb0jr/www_subdomain/cgi-bin/show_me_page_hosting_cgiemail.html? [L,R=301]
+RewriteCond %{QUERY_STRING} ^page\=hosting_webrings$
+RewriteRule ^cgi\-bin\/show_me[\/]?$ /scraping/files/live/goodhealth.freeservers.com_gar598_gmail.com_8i6iueb0jr/www_subdomain/cgi-bin/show_me_page_hosting_webrings.html? [L,R=301]
+RewriteCond %{QUERY_STRING} ^page\=stats_overview$
+RewriteRule ^cgi\-bin\/show_me[\/]?$ /scraping/files/live/goodhealth.freeservers.com_gar598_gmail.com_8i6iueb0jr/www_subdomain/cgi-bin/show_me_page_stats_overview.html? [L,R=301]
+RewriteCond %{QUERY_STRING} ^page\=hosting_search_optimize$
+RewriteRule ^cgi\-bin\/show_me[\/]?$ /scraping/files/live/goodhealth.freeservers.com_gar598_gmail.com_8i6iueb0jr/www_subdomain/cgi-bin/show_me_page_hosting_search_optimize.html? [L,R=301]
+RewriteCond %{QUERY_STRING} ^page\=hosting_remote$
+RewriteRule ^cgi\-bin\/show_me[\/]?$ /scraping/files/live/goodhealth.freeservers.com_gar598_gmail.com_8i6iueb0jr/www_subdomain/cgi-bin/show_me_page_hosting_remote.html? [L,R=301]
+RewriteRule ^WebHosting101\/HowDoIChooseADomainNameRegistrar\.html$ /scraping/files/live/goodhealth.freeservers.com_gar598_gmail.com_8i6iueb0jr/www_subdomain/WebHosting101/HowDoIChooseADomainNameRegistrar.html? [L,R=301]
+RewriteRule ^WebHosting101\/WhyShouldIUseCSS\.html$ /scraping/files/live/goodhealth.freeservers.com_gar598_gmail.com_8i6iueb0jr/www_subdomain/WebHosting101/WhyShouldIUseCSS.html? [L,R=301]
+RewriteRule ^WebHosting101\/WhatIsBlogging\.html$ /scraping/files/live/goodhealth.freeservers.com_gar598_gmail.com_8i6iueb0jr/www_subdomain/WebHosting101/WhatIsBlogging.html? [L,R=301]
+RewriteRule ^WebHosting101\/WhatIsSSL\.html$ /scraping/files/live/goodhealth.freeservers.com_gar598_gmail.com_8i6iueb0jr/www_subdomain/WebHosting101/WhatIsSSL.html? [L,R=301]
+RewriteRule ^WebHosting101\/WhatIsFTP\.html$ /scraping/files/live/goodhealth.freeservers.com_gar598_gmail.com_8i6iueb0jr/www_subdomain/WebHosting101/WhatIsFTP.html? [L,R=301]
+RewriteRule ^WebHosting101\/WhatIsPHP\.html$ /scraping/files/live/goodhealth.freeservers.com_gar598_gmail.com_8i6iueb0jr/www_subdomain/WebHosting101/WhatIsPHP.html? [L,R=301]
+RewriteRule ^WebHosting101\/WhatIsCSS\.html$ /scraping/files/live/goodhealth.freeservers.com_gar598_gmail.com_8i6iueb0jr/www_subdomain/WebHosting101/WhatIsCSS.html? [L,R=301]
+RewriteRule ^WebHosting101\/WhatIsAnRSSFeed\.html$ /scraping/files/live/goodhealth.freeservers.com_gar598_gmail.com_8i6iueb0jr/www_subdomain/WebHosting101/WhatIsAnRSSFeed.html? [L,R=301]
+RewriteCond %{QUERY_STRING} ^page\=rules$
+RewriteRule ^cgi\-bin\/show_me[\/]?$ /scraping/files/live/goodhealth.freeservers.com_gar598_gmail.com_8i6iueb0jr/www_subdomain/cgi-bin/show_me_page_rules.html? [L,R=301]
+RewriteCond %{QUERY_STRING} ^page\=billing_policy$
+RewriteRule ^cgi\-bin\/show_me[\/]?$ /scraping/files/live/goodhealth.freeservers.com_gar598_gmail.com_8i6iueb0jr/www_subdomain/cgi-bin/show_me_page_billing_policy.html? [L,R=301]
+RewriteCond %{QUERY_STRING} ^page\=privacy$
+RewriteRule ^cgi\-bin\/show_me[\/]?$ /scraping/files/live/goodhealth.freeservers.com_gar598_gmail.com_8i6iueb0jr/www_subdomain/cgi-bin/show_me_page_privacy.html? [L,R=301]
+RewriteCond %{QUERY_STRING} ^page\=hosting_compare&amp;packages\=schost01\[alt\]starter1\[alt\]default$
+RewriteRule ^cgi\-bin\/show_me[\/]?$ /scraping/files/live/goodhealth.freeservers.com_gar598_gmail.com_8i6iueb0jr/www_subdomain/cgi-bin/show_me_page_hosting_compare_packages_schost01_alt_starter1_alt_default.html? [L,R=301]
+RewriteRule ^hosting\.html$ /scraping/files/live/goodhealth.freeservers.com_gar598_gmail.com_8i6iueb0jr/www_subdomain/hosting.html? [L,R=301]
+RewriteCond %{QUERY_STRING} ^package_id\=20153&amp;package_id\=20149&amp;package_id\=20141$
+RewriteRule ^cgi\-bin\/path\/signup[\/]?$ /scraping/files/live/goodhealth.freeservers.com_gar598_gmail.com_8i6iueb0jr/signup_subdomain/cgi-bin/path/signup_package_id_20153_package_id_20149_package_id_20141.html? [L,R=301]
+RewriteRule ^web\-hosting\-provider\.html$ /scraping/files/live/goodhealth.freeservers.com_gar598_gmail.com_8i6iueb0jr/www_subdomain/web-hosting-provider.html? [L,R=301]
+RewriteCond %{QUERY_STRING} ^page\=hosting_details&amp;object\=freehost&amp;refcd\=WSUOWS080715NB01$
+RewriteRule ^cgi\-bin\/show_me[\/]?$ /scraping/files/live/goodhealth.freeservers.com_gar598_gmail.com_8i6iueb0jr/www_subdomain/cgi-bin/show_me_page_hosting_details_object_freehost_refcd_WSUOWS080715NB01.html? [L,R=301]
+RewriteCond %{QUERY_STRING} ^page\=hosting_compare&amp;refcd\=WSUOWS080715NB01$
+RewriteRule ^cgi\-bin\/show_me[\/]?$ /scraping/files/live/goodhealth.freeservers.com_gar598_gmail.com_8i6iueb0jr/www_subdomain/cgi-bin/show_me_page_hosting_compare_refcd_WSUOWS080715NB01.html? [L,R=301]
+RewriteCond %{QUERY_STRING} ^page\=hosting_details&amp;object\=dphost06100&amp;refcd\=WSUOWS080715NB01$
+RewriteRule ^cgi\-bin\/show_me[\/]?$ /scraping/files/live/goodhealth.freeservers.com_gar598_gmail.com_8i6iueb0jr/www_subdomain/cgi-bin/show_me_page_hosting_details_object_dphost06100_refcd_WSUOWS080715NB01.html? [L,R=301]
+RewriteCond %{QUERY_STRING} ^package_id\=20208&amp;package_id\=20210&amp;package_id\=20211&amp;package_id\=20244&amp;refcd\=WSUOWS080715NB01$
+RewriteRule ^cgi\-bin\/path\/signup[\/]?$ /scraping/files/live/goodhealth.freeservers.com_gar598_gmail.com_8i6iueb0jr/files/fcd_WSUOWS080715NB01_ckj3cau2f6hbkgwzro8qmj.html? [L,R=301]
+RewriteCond %{QUERY_STRING} ^page\=hosting_details&amp;object\=dphost06200&amp;refcd\=WSUOWS080715NB01$
+RewriteRule ^cgi\-bin\/show_me[\/]?$ /scraping/files/live/goodhealth.freeservers.com_gar598_gmail.com_8i6iueb0jr/www_subdomain/cgi-bin/show_me_page_hosting_details_object_dphost06200_refcd_WSUOWS080715NB01.html? [L,R=301]
+RewriteCond %{QUERY_STRING} ^package_id\=20201&amp;package_id\=20230&amp;package_id\=20231&amp;package_id\=20233&amp;refcd\=WSUOWS080715NB01$
+RewriteRule ^cgi\-bin\/path\/signup[\/]?$ /scraping/files/live/goodhealth.freeservers.com_gar598_gmail.com_8i6iueb0jr/files/fcd_WSUOWS080715NB01_jfrqmowfwj8kc6fb0v8ice.html? [L,R=301]
+RewriteCond %{QUERY_STRING} ^refcd\=WSUOWS080715NB01$
+RewriteRule ^fs_img\/search\/blogs\.htm$ /scraping/files/live/goodhealth.freeservers.com_gar598_gmail.com_8i6iueb0jr/www_subdomain/fs_img/search/blogs_refcd_WSUOWS080715NB01.html? [L,R=301]
+RewriteCond %{QUERY_STRING} ^wrap\=1&amp;page\=hosting_file_size$
+RewriteRule ^cgi\-bin\/show_me[\/]?$ /scraping/files/live/goodhealth.freeservers.com_gar598_gmail.com_8i6iueb0jr/www_subdomain/cgi-bin/show_me_wrap_1_page_hosting_file_size.html? [L,R=301]
+RewriteRule ^WebHostingDetails[\/]?$ /scraping/files/live/goodhealth.freeservers.com_gar598_gmail.com_8i6iueb0jr/www_subdomain/WebHostingDetails.html? [L,R=301]
+RewriteCond %{QUERY_STRING} ^wrap\=1&amp;page\=stats_compare$
+RewriteRule ^cgi\-bin\/show_me[\/]?$ /scraping/files/live/goodhealth.freeservers.com_gar598_gmail.com_8i6iueb0jr/www_subdomain/cgi-bin/show_me_wrap_1_page_stats_compare.html? [L,R=301]
+RewriteCond %{QUERY_STRING} ^page\=hosting_details&amp;object\=freehost&amp;refcd\=WSUOWS120713NB01$
+RewriteRule ^cgi\-bin\/show_me[\/]?$ /scraping/files/live/goodhealth.freeservers.com_gar598_gmail.com_8i6iueb0jr/www_subdomain/cgi-bin/show_me_page_hosting_details_object_freehost_refcd_WSUOWS120713NB01.html? [L,R=301]
+RewriteCond %{QUERY_STRING} ^page\=hosting_details&amp;object\=dphost06100&amp;refcd\=WSUOWS120713NB01$
+RewriteRule ^cgi\-bin\/show_me[\/]?$ /scraping/files/live/goodhealth.freeservers.com_gar598_gmail.com_8i6iueb0jr/www_subdomain/cgi-bin/show_me_page_hosting_details_object_dphost06100_refcd_WSUOWS120713NB01.html? [L,R=301]
+RewriteCond %{QUERY_STRING} ^page\=hosting_details&amp;object\=dphost06200&amp;refcd\=WSUOWS120713NB01$
+RewriteRule ^cgi\-bin\/show_me[\/]?$ /scraping/files/live/goodhealth.freeservers.com_gar598_gmail.com_8i6iueb0jr/www_subdomain/cgi-bin/show_me_page_hosting_details_object_dphost06200_refcd_WSUOWS120713NB01.html? [L,R=301]
+RewriteCond %{QUERY_STRING} ^refcd\=WSUOWS120713NB01$
+RewriteRule ^fs_img\/search\/blogs\.htm$ /scraping/files/live/goodhealth.freeservers.com_gar598_gmail.com_8i6iueb0jr/www_subdomain/fs_img/search/blogs_refcd_WSUOWS120713NB01.html? [L,R=301]
+RewriteCond %{QUERY_STRING} ^refcd\=MWS_20040713_Banner_bar$
+RewriteRule ^[\/]?$ /scraping/files/live/goodhealth.freeservers.com_gar598_gmail.com_8i6iueb0jr/www_subdomain/refcd_MWS_20040713_Banner_bar.html? [L,R=301]
+RewriteCond %{QUERY_STRING} ^type\=billing_support$
+RewriteRule ^cgi\-bin\/support[\/]?$ /scraping/files/live/goodhealth.freeservers.com_gar598_gmail.com_8i6iueb0jr/members_subdomain/cgi-bin/support_type_billing_support.html? [L,R=301]
+RewriteRule ^cgi\-bin\/util\/helpfiles[\/]?$ /scraping/files/live/goodhealth.freeservers.com_gar598_gmail.com_8i6iueb0jr/members_subdomain/cgi-bin/util/helpfiles.html? [L,R=301]
+RewriteRule ^cgi\-bin\/help\/helpfiles\/about\/abuse\/abuse_form\/q\.html$ /scraping/files/live/goodhealth.freeservers.com_gar598_gmail.com_8i6iueb0jr/help_subdomain/cgi-bin/help/helpfiles/about/abuse/abuse_form/q.html? [L,R=301]
+RewriteRule ^cgi\-bin\/KanaFRH\.pl$ /scraping/files/live/goodhealth.freeservers.com_gar598_gmail.com_8i6iueb0jr/members_subdomain/cgi-bin/KanaFRH.html? [L,R=301]
+RewriteCond %{QUERY_STRING} ^package_id\=20153&amp;package_id\=20149&amp;package_id\=20141&amp;refcd\=WSUOWS010823NB01$
+RewriteRule ^cgi\-bin\/path\/signup[\/]?$ /scraping/files/live/goodhealth.freeservers.com_gar598_gmail.com_8i6iueb0jr/files/fcd_WSUOWS010823NB01_pdtsyyop2z43whhs2ohx2e.html? [L,R=301]
+RewriteCond %{QUERY_STRING} ^package_id\=20153&amp;package_id\=20149&amp;package_id\=20141&amp;refcd\=WSUOWS010823NB01$
+RewriteRule ^cgi\-bin\/path\/signup[\/]?$ /scraping/files/live/goodhealth.freeservers.com_gar598_gmail.com_8i6iueb0jr/files/fcd_WSUOWS010823NB01_pq4qmn7qe3qrwpmu4k3frx.html? [L,R=301]
+RewriteCond %{QUERY_STRING} ^package_id\=20153&amp;package_id\=20149&amp;package_id\=20141&amp;refcd\=WSUOWS010823NB01$
+RewriteRule ^cgi\-bin\/path\/signup[\/]?$ /scraping/files/live/goodhealth.freeservers.com_gar598_gmail.com_8i6iueb0jr/files/fcd_WSUOWS010823NB01_wcy5ixo8zpujqizv5hcd35.html? [L,R=301]
+RewriteCond %{QUERY_STRING} ^package_id\=20153&amp;package_id\=20149&amp;package_id\=20141&amp;refcd\=WSUOWS010823NB01$
+RewriteRule ^cgi\-bin\/path\/signup[\/]?$ /scraping/files/live/goodhealth.freeservers.com_gar598_gmail.com_8i6iueb0jr/files/fcd_WSUOWS010823NB01_tv8xzdiz4xtfjgacdscrse.html? [L,R=301]
+RewriteCond %{QUERY_STRING} ^package_id\=20153&amp;package_id\=20149&amp;package_id\=20141&amp;refcd\=WSUOWS010823NB01$
+RewriteRule ^cgi\-bin\/path\/signup[\/]?$ /scraping/files/live/goodhealth.freeservers.com_gar598_gmail.com_8i6iueb0jr/files/fcd_WSUOWS010823NB01_44mz7ixpnvgp8p47ka7jx5.html? [L,R=301]
+RewriteCond %{QUERY_STRING} ^package_id\=20153&amp;package_id\=20149&amp;package_id\=20141&amp;refcd\=WSUOWS010823NB01$
+RewriteRule ^cgi\-bin\/path\/signup[\/]?$ /scraping/files/live/goodhealth.freeservers.com_gar598_gmail.com_8i6iueb0jr/files/fcd_WSUOWS010823NB01_qudm23igikwnzebo5qdt0q.html? [L,R=301]
+RewriteCond %{QUERY_STRING} ^package_id\=20153&amp;package_id\=20149&amp;package_id\=20141&amp;refcd\=WSUOWS010823NB01$
+RewriteRule ^cgi\-bin\/path\/signup[\/]?$ /scraping/files/live/goodhealth.freeservers.com_gar598_gmail.com_8i6iueb0jr/files/fcd_WSUOWS010823NB01_fr2qptfubsqupxc6kbogkv.html? [L,R=301]
+RewriteCond %{QUERY_STRING} ^package_id\=20153&amp;package_id\=20149&amp;package_id\=20141&amp;refcd\=WSUOWS010823NB01$
+RewriteRule ^cgi\-bin\/path\/signup[\/]?$ /scraping/files/live/goodhealth.freeservers.com_gar598_gmail.com_8i6iueb0jr/files/fcd_WSUOWS010823NB01_crwwtuwt0kzviansrueu5j.html? [L,R=301]
+RewriteCond %{QUERY_STRING} ^package_id\=20153&amp;package_id\=20149&amp;package_id\=20141&amp;refcd\=WSUOWS010823NB01$
+RewriteRule ^cgi\-bin\/path\/signup[\/]?$ /scraping/files/live/goodhealth.freeservers.com_gar598_gmail.com_8i6iueb0jr/files/fcd_WSUOWS010823NB01_0v4g3w35igrw03bzhp66uq.html? [L,R=301]

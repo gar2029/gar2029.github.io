@@ -1,0 +1,163 @@
+h1 {
+	margin:0px;
+	font-size:12px;
+}
+#mainheadings {
+	margin-bottom:15px;
+}
+#mainheadings h2 {
+	text-align:right;
+	margin:0px;
+	font-size:14px;
+}
+#mainheadings h2 a{
+	color:#000000;
+	text-decoration:none;
+}
+#mainheadings h2 a:hover{
+	text-decoration:underline;
+}
+
+#column1 h2 {
+	text-align:left;
+	margin:0px;
+	color:#FFFFFF;
+  background-color:#003377;
+	font-size:12px;
+	padding:5px;
+	border-bottom:1px solid #FFFFFF;
+}
+h3 {
+	text-align:center;
+	margin:0px;
+}
+h4 {
+	text-align:center;
+	margin:0px;
+}
+#topbranding {
+	padding:10px;
+	width:758px;
+}
+#logo {
+}
+#phone {
+	float:right;
+	margin-top:1px;
+}
+#maincontent {
+	width:720px;
+	margin-bottom:15px;
+	padding:25px;
+	padding-top:14px;
+}
+#column1 {
+  font: 12px Arial, Helvetica, sans-serif;
+  float:left;
+  width:152px;
+  padding-top:0px;
+  margin-left:0px;
+  text-align:left;
+  background-color:#eeeeee;
+}
+#column1 a, #column1 a:link {
+  color:#000000;
+  text-decoration:none;
+}
+#column1 a:hover {
+  color:#777777;
+  text-decoration:underline;
+}
+#column1 #mainlinks div {
+  padding:5px;
+  border-bottom:1px solid #FFFFFF;
+}
+#column1 h2 a, #column1 h2 a:link, #column1 h2 a:hover{
+	color:#FFFFFF;
+}
+
+#column2 {
+	font: 12px Arial, Helvetica, sans-serif;
+	padding:5px;
+	padding-top:0px;
+	padding-left:15px;
+	margin-bottom:15px;
+	margin-top:0px;
+	background-color:#FFFFFF;
+	text-align:justify;
+}
+#column2 h2 {
+	font-style:normal;
+	border-bottom:1px solid #000000;
+}
+
+#column2 h3 {
+	font-size:12px;
+	font-style:italic;
+	text-align:left;
+}
+#column2 div {
+	margin-bottom: 15px;
+}
+
+#back {
+	text-indent:0px;
+	font-weight:bold;
+	text-align:right;
+}
+#back a {
+	text-decoration:none;
+}
+#back a:hover {
+	text-decoration:underline;
+}
+#area3 {
+	font: 10px Arial, Helvetica, sans-serif;
+	padding:5px;
+	clear:both;
+	background-color:#FFFFFF;
+}
+ul {
+	margin-top:0px;
+	margin-bottom:0px;
+}
+li {
+	}
+
+/* start: FS package classes (unbound from applicable HTML to validate with w3c) */
+.head1{ font-family: arial, sans-serif;
+  color: #ffffff; font-weight: bold; font-size: 13.5pt;
+	margin-right:9px;
+	margin-left:9px;
+	margin-top:3px;
+	line-height:13.5pt;
+}
+.subhead1{ font-family: arial, sans-serif;
+  color: #ffffff; bold; font-size: 8pt;
+	margin-right:9px;
+	margin-left:9px;
+	line-height:8pt;
+}
+.lidiv{ position:relative;top:-5px;left:5px; margin:0; }
+/* end: FS package classes */
+
+#bottomlinks, #bottomlinks a {
+	background-color:#FFFFFF;
+	clear:both;
+	text-align:center;
+	color: #aaaaaa;
+	padding:5px;
+}
+
+#bottomlinks, #bottomlinks a, #fineprint, #fineprint a {
+	color: #aaaaaa;
+}
+#bottomlinks a:hover, #fineprint a:hover{ text-decoration: none; }
+
+#fineprint {
+	background-color:#FFFFFF;
+	font-size:9px;
+	text-align:center;
+	color: #aaaaaa;
+	padding:5px;
+}

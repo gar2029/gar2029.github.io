@@ -1,0 +1,23 @@
+body{ margin:0px; background-color:white; }
+.palette{
+  background-color: #ffffff;
+  filter:progid:DXImageTransform.Microsoft.Gradient(
+    GradientType=0, StartColorStr='#ccffffff', EndColorStr='#ffE1E9F4'
+  );
+}
+.content1{ font-family:verdana, sans-serif; font-size:8pt; }
+.content1 a{ color: black; }
+.content1 span{ color: blue; }
+.footer,.footer a{ font-family:verdana, sans-serif; font-size:7pt; color:black; }
+.tile, .tile td a{ font-family:arial,sans-serif;font-size:8pt; }
+.photo,.photo a{ color:#ED8508; }
+.family,.family a{ color:#0567D4; }
+.business,.business a{ color:#82AF1E; }
+.hobby,.hobby a{ color:#6F53CA; }
+
+.header1{ background-color:#EFF3FA; }
+.header1 a{ font-family: arial,sans-serif; font-size: 9pt;
+  font-weight:bold; color:#075698; padding-right:30px; text-decoration:none;
+}
+.temp{ position:absolute; visibility:hidden; }
+.footer,.footer a{ color: #aaaaaa; }
